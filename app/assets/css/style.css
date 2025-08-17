@@ -1,0 +1,3351 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f4f7fc; /* Light blue-grey background for the main area */
+    display: flex;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 260px;
+    background-color: #001f3f; /* Navy Blue */
+    color: #ffffff; /* White */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #003366; /* Darker navy for separation */
+}
+
+.sidebar-logo {
+    width: 60px;
+    height: 60px;
+    background-color: #FFD700; /* Gold for placeholder */
+    border-radius: 50%;
+    margin-bottom: 10px;
+    display: inline-block;
+    /* Add actual image styling here if needed */
+}
+
+.sidebar-header h3 {
+    margin: 5px 0;
+    font-size: 1.4em;
+    color: #FFD700; /* Gold */
+}
+
+.sidebar-header p {
+    font-size: 0.9em;
+    color: #ccc;
+    margin: 0;
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+    overflow-y: auto; /* For many links */
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav ul li a {
+    display: flex; /* Use flex for icon and text alignment */
+    align-items: center;
+    padding: 15px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    border-left: 3px solid transparent;
+    transition: background-color 0.3s ease, border-left-color 0.3s ease;
+}
+
+.sidebar-nav ul li a .icon {
+    margin-right: 12px;
+    font-size: 1.2em; /* Adjust icon size */
+    width: 20px; /* Fixed width for alignment */
+    text-align: center;
+}
+
+.sidebar-nav ul li a:hover {
+    background-color: #003366; /* Darker navy for hover */
+    color: #FFD700; /* Gold */
+    border-left: 3px solid #FFD700; /* Gold */
+}
+
+.sidebar-nav ul li a.active {
+    background-color: #002b50; /* Slightly different navy for active */
+    color: #FFD700; /* Gold */
+    font-weight: 600;
+    border-left: 3px solid #FFD700; /* Gold */
+}
+
+.sidebar-nav ul li a.logout-link:hover {
+    background-color: #c00000; /* Reddish for logout hover */
+    color: #ffffff;
+    border-left-color: #c00000;
+}
+
+.sidebar-footer {
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 0.8em;
+    border-top: 1px solid #003366; /* Darker navy for separation */
+    color: #aaa;
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 260px; /* Same as sidebar width */
+    flex-grow: 1;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ensure it takes full viewport height */
+    overflow-y: auto; /* Allow content to scroll independently */
+}
+
+/* Header Styles */
+.header {
+    background-color: #ffffff; /* White */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-bottom: 1px solid #e0e0e0;
+    height: 70px; /* Fixed header height */
+    box-sizing: border-box;
+}
+
+.header-title h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #001f3f; /* Navy Blue */
+}
+.header-title p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.header-user-info {
+    display: flex;
+    align-items: center;
+}
+
+.admin-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #001f3f; /* Navy for placeholder */
+    border: 2px solid #FFD700; /* Gold border */
+}
+
+.header-user-info span {
+    font-weight: 600;
+    color: #001f3f; /* Navy Blue */
+}
+
+/* Content Area Styles */
+.content-area {
+    padding: 30px;
+    flex-grow: 1; /* Takes remaining space */
+    overflow-y: auto; /* If content within content-area itself needs scrolling */
+}
+
+.content-area h2 {
+    color: #001f3f; /* Navy Blue */
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #FFD700; /* Gold accent */
+    padding-bottom: 10px;
+}
+
+/* Stats Overview (Dashboard Specific) */
+.stats-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background-color: #ffffff; /* White */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.stat-icon {
+    font-size: 2.5em; /* Large icons */
+    padding: 15px;
+    border-radius: 50%;
+    margin-right: 20px;
+    color: #fff; /* White icon color */
+}
+.stat-icon.users { background-color: #007bff; } /* Example colors */
+.stat-icon.exams { background-color: #28a745; }
+.stat-icon.blogs { background-color: #ffc107; }
+.stat-icon.vouchers { background-color: #17a2b8; }
+
+
+.stat-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    color: #001f3f; /* Navy Blue */
+}
+
+.stat-info p {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Quick Actions (Dashboard Specific) */
+.quick-actions {
+    margin-top: 30px;
+}
+.actions-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.action-button {
+    background-color: #001f3f; /* Navy Blue */
+    color: #ffffff; /* White */
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block; /* Ensure proper padding and margin */
+}
+.action-button:hover {
+    background-color: #FFD700; /* Gold */
+    color: #001f3f; /* Navy Blue text on gold hover */
+}
+
+
+/* Common Table Styles (will be used by other pages) */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border-radius: 8px;
+    overflow: hidden; /* For border-radius on table */
+}
+
+.data-table th, .data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.data-table thead th {
+    background-color: #001f3f; /* Navy Blue */
+    color: #ffffff; /* White */
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f4f7fc; /* Light hover for rows */
+}
+
+.data-table .action-buttons button, .data-table .action-buttons a {
+    padding: 6px 12px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-decoration: none;
+    color: #ffffff;
+}
+.data-table .action-buttons .btn-edit { background-color: #0056b3; /* Darker Blue for edit */}
+.data-table .action-buttons .btn-edit:hover { background-color: #004085; }
+.data-table .action-buttons .btn-delete { background-color: #dc3545; /* Red for delete */}
+.data-table .action-buttons .btn-delete:hover { background-color: #c82333; }
+.data-table .action-buttons .btn-assign { background-color: #28a745; /* Green for assign */}
+.data-table .action-buttons .btn-assign:hover { background-color: #218838; }
+.data-table .action-buttons .btn-view { background-color: #17a2b8; /* Teal for view */}
+.data-table .action-buttons .btn-view:hover { background-color: #138496; }
+
+
+/* Common Form Styles (will be used by other pages) */
+.form-container {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #001f3f;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="file"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #001f3f;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 31, 63, 0.25);
+}
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+.form-button {
+    background-color: #001f3f; /* Navy Blue */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.form-button:hover {
+    background-color: #FFD700; /* Gold */
+    color: #001f3f; /* Navy Blue text */
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) { /* Tablet and smaller desktops */
+    .stats-overview {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .header-title h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 768px) { /* Tablet */
+    .sidebar {
+        width: 220px;
+    }
+    .main-content {
+        margin-left: 220px;
+    }
+    .header {
+        padding: 15px 20px;
+    }
+    .content-area {
+        padding: 20px;
+    }
+    .stats-overview {
+        grid-template-columns: 1fr 1fr; /* Two columns for tablets */
+    }
+    .header-title p {
+        display: none; /* Hide subtitle on smaller screens for space */
+    }
+    .admin-avatar {
+        width: 35px;
+        height: 35px;
+    }
+    .header-user-info span {
+        display: none; /* Optionally hide admin name text */
+    }
+}
+
+@media (max-width: 600px) { /* Mobile - Initial plan was desktop/tablet, but good to consider */
+    .sidebar {
+        /* Example: transform to a hidden sidebar or top bar */
+        /* For now, let's just make it narrower or it could be toggled */
+        position: fixed;
+        left: -220px; /* Hide by default */
+        /* Add JavaScript later for a toggle button if this approach is used */
+        /* Or, a simpler approach: */
+        /* width: 100%; height: auto; position: static; */
+    }
+    .main-content {
+        margin-left: 0; /* Full width if sidebar is hidden or on top */
+    }
+    /* If sidebar is to be toggled, a class like .sidebar-open would bring it back */
+    /* body.sidebar-open .sidebar { left: 0; } */
+
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    .header-title {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .header-user-info {
+        margin-top: 5px;
+    }
+    .stats-overview {
+        grid-template-columns: 1fr; /* Single column for mobile */
+    }
+    .actions-container {
+        flex-direction: column;
+    }
+    .action-button {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .data-table {
+        font-size: 0.9em; /* Smaller font for tables on mobile */
+    }
+    .data-table th, .data-table td {
+        padding: 8px 10px;
+    }
+    /* For very small screens, tables might need a horizontal scroll or card display */
+    .table-responsive-wrapper { /* Wrap tables in this div */
+        overflow-x: auto;
+    }
+}
+
+/* Utility classes */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.d-flex { display: flex; }
+.justify-between { justify-content: space-between; }
+.align-center { align-items: center; }
+
+/* Card styles (for blog, exams, etc.) */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image-placeholder {
+    height: 180px;
+    background-color: #e0e0e0; /* Placeholder color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 1.2em;
+}
+.card-image-placeholder.small {
+    height: 100px; /* For smaller cards if needed */
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 1.3em;
+    color: #001f3f; /* Navy Blue */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.card-meta {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.card-actions {
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 10px;
+}
+
+.card-actions .btn-edit, .card-actions .btn-delete, .card-actions .btn-assign, .card-actions .btn-view {
+    padding: 8px 15px;
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+/* Button colors are defined in .data-table .action-buttons, reuse them or make them more generic */
+/* .btn-edit { background-color: #0056b3; } .btn-edit:hover { background-color: #004085; } */
+/* .btn-delete { background-color: #dc3545; } .btn-delete:hover { background-color: #c82333; } */
+
+/* Status indicators */
+.status {
+    padding: 4px 8px;
+    border-radius: 12px; /* Pill shape */
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.status-active, .status-used {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green */
+}
+.status-inactive, .status-unused {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red */
+}
+.status-pending {
+    background-color: #fff3cd; /* Light yellow */
+    color: #856404; /* Dark yellow */
+}
+
+/* Ensure button styles are applied correctly for different contexts */
+.btn {
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border: none; /* Assuming solid background buttons */
+    color: #ffffff; /* Default text color for buttons */
+}
+
+.btn-primary {
+    background-color: #001f3f; /* Navy Blue */
+}
+.btn-primary:hover {
+    background-color: #FFD700; /* Gold */
+    color: #001f3f; /* Navy Blue text */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Grey */
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-success { background-color: #28a745; }
+.btn-success:hover { background-color: #218838; }
+
+.btn-danger { background-color: #dc3545; }
+.btn-danger:hover { background-color: #c82333; }
+
+.btn-warning { background-color: #ffc107; color: #212529;}
+.btn-warning:hover { background-color: #e0a800; }
+
+.btn-info { background-color: #17a2b8; }
+.btn-info:hover { background-color: #138496; }
+
+/* Adjustments for mobile sidebar toggle if we were to implement JS toggle */
+/*
+.sidebar-toggle-button {
+    display: none; // Shown by media query for small screens
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001; // Above sidebar
+    background: #001f3f;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+    .sidebar-toggle-button {
+        display: block;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+    }
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    .main-content.sidebar-open {
+        // Optional: Add an overlay or dim the main content
+    }
+}
+*/
+
+/* Ensure icons in sidebar are consistently sized and aligned */
+.sidebar-nav ul li a .icon {
+    display: inline-block; /* Helps with alignment and width */
+    width: 24px; /* Consistent width for icons */
+    text-align: center; /* Center icon within its block */
+}
+
+/* Final check for gold accents */
+/* Ensure gold is #FFD700 */
+/* Hover states for links and buttons, active states, borders etc. */
+/* Example:
+.some-element:hover { color: #FFD700; }
+.active-element { border-color: #FFD700; }
+*/
+
+/* Form validation styling */
+.form-group input.invalid,
+.form-group textarea.invalid,
+.form-group select.invalid {
+    border-color: #dc3545; /* Red for invalid */
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Mobile Sidebar Toggle */
+.sidebar-toggle-button {
+    display: none;
+    background: none;
+    border: none;
+    color: #001f3f;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .sidebar-toggle-button {
+        display: block;
+        margin-right: 1rem;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+/* Inherits common styles from dashboard.css */
+
+/* Page-specific styles for Ads & Promotions Management */
+
+.content-area {
+    /* Any specific padding or layout adjustments for this page */
+}
+
+/* Section title styling (if not already generic) */
+.section-title {
+    font-size: 1.5em;
+    color: #001f3f; /* Navy Blue */
+    margin-top: 0; /* If it's the first element in a section */
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FFD700; /* Gold accent */
+}
+.upload-banner-section {
+    margin-bottom: 40px; /* Space between upload form and current ads list */
+}
+/* .form-container, .form-group, .form-control, .form-button-container, .form-button
+   are expected to be styled in dashboard.css */
+
+#uploadAdForm .form-row { /* For side-by-side inputs */
+    display: flex;
+    gap: 20px;
+    margin-bottom: 0; /* Rely on individual form-group margins or add if needed */
+}
+#uploadAdForm .form-row .form-group {
+    flex: 1; /* Equal width for columns in the row */
+    margin-bottom: 15px; /* Standard form-group margin */
+}
+#uploadAdForm .form-row .form-group.col-md-6 { /* Mimicking Bootstrap column */
+    /* flex-basis: calc(50% - 10px); /* If explicit sizing is preferred over flex:1 */
+}
+
+#uploadAdForm .date-range-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#uploadAdForm .date-range-group input[type="date"] {
+    flex-grow: 1;
+}
+#uploadAdForm .date-range-group span {
+    font-weight: 500;
+    color: #333;
+}
+
+#uploadAdForm .form-text.text-muted { /* Helper text style */
+    font-size: 0.85em;
+    color: #6c757d;
+    display: block; /* Ensure it takes its own line */
+    margin-top: 5px;
+}
+
+
+/* Current Ads Section */
+.current-ads-section {
+    /* Styling for the wrapper of the ads list */
+}
+
+.ads-toolbar {
+    /* .toolbar styles from dashboard.css or other specific CSS can be base */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align items to the start */
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px; /* Space below toolbar, before table */
+    padding: 15px 0; /* Less vertical padding if not boxed */
+    border-bottom: 1px solid #e9ecef; /* Separator */
+}
+.ads-toolbar .search-input,
+.ads-toolbar .filter-select {
+    /* Styles from dashboard.css or other specific CSS */
+    margin-right: 10px; /* Ensure some space if they don't wrap */
+}
+.ads-toolbar .filter-btn {
+    /* Styles from dashboard.css */
+}
+
+
+/* Ads Table Specific Styles */
+/* .table-container and .data-table styles are from dashboard.css */
+.ads-table .ad-thumbnail {
+    width: 100px; /* Fixed width for thumbnail */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 60px; /* Max height to keep rows consistent */
+    object-fit: contain; /* Or 'cover', depending on desired effect */
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    background-color: #f8f9fa; /* Light background for transparent images */
+}
+
+.ads-table td, .ads-table th {
+    vertical-align: middle; /* Good for rows with images */
+}
+
+.ads-table .action-buttons .btn {
+    /* Styles for action buttons are inherited from dashboard.css */
+    padding: 5px 8px; /* Compact buttons */
+}
+.ads-table .action-buttons .btn .icon {
+    margin-right: 0; /* Icon-only */
+    font-size: 1em;
+}
+.ads-table .btn-toggle-status .icon { /* Specific icon styling if needed */
+    /* e.g. rotation for toggle state */
+}
+
+
+/* Pagination for ads - reusing .pagination from user-management.css */
+.ads-pagination {
+    /* Styles are inherited if .pagination class is used. */
+    margin-top: 25px;
+}
+
+
+/* Responsive adjustments for ads management page */
+@media (max-width: 992px) { /* Larger tablets / smaller desktops */
+    #uploadAdForm .form-row {
+        flex-direction: column; /* Stack form row inputs */
+        gap: 0;
+    }
+    #uploadAdForm .form-row .form-group {
+        margin-bottom: 15px; /* Add back form-group margin */
+    }
+    .ads-toolbar {
+        justify-content: space-between; /* Allow search and filter to spread */
+    }
+    .ads-toolbar .search-input {
+        flex-grow: 1; /* Allow search to take more space */
+    }
+}
+
+@media (max-width: 768px) {
+    #uploadAdForm .date-range-group {
+        flex-direction: column;
+        align-items: stretch; /* Full width inputs */
+        gap: 5px;
+    }
+    #uploadAdForm .date-range-group span {
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .ads-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .ads-toolbar .search-input,
+    .ads-toolbar .filter-select,
+    .ads-toolbar .filter-btn {
+        width: 100%;
+        box-sizing: border-box;
+        margin-right: 0; /* Remove right margin when stacked */
+    }
+
+    /* Example: Hide less critical columns on smaller screens for ads table */
+    .ads-table th:nth-child(5), /* Display Dates */
+    .ads-table td:nth-child(5),
+    .ads-table th:nth-child(6), /* Clicks/Views */
+    .ads-table td:nth-child(6) {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 1.3em;
+    }
+    /* Further hide or simplify table columns if needed */
+    .ads-table th:nth-child(3), /* Placement */
+    .ads-table td:nth-child(3) {
+        display: none;
+    }
+    .ads-table .ad-thumbnail {
+        width: 60px; /* Smaller thumbnail on mobile */
+        max-height: 40px;
+    }
+    .ads-table .action-buttons {
+        display: flex;
+        flex-direction: column; /* Stack buttons in actions column */
+        gap: 5px;
+    }
+    .ads-table .action-buttons .btn {
+        width: 100%; /* Make action buttons full width of their cell part */
+        text-align: center;
+    }
+}
+```
+
+Key CSS features for `ads-management.css`:
+- **Upload Form Styling:**
+    - Uses common form styles from `dashboard.css`.
+    - Specific layout for side-by-side inputs (`.form-row`) and the date range picker.
+    - Styles for helper text (`.form-text.text-muted`).
+- **Current Ads Section:**
+    - A simple toolbar for searching and filtering existing ads.
+    - Table styling for ad previews (`.ad-thumbnail`) to ensure consistent sizing.
+    - Action buttons in the table are made compact, suitable for icon-only display.
+- **Responsive Design:**
+    - The upload form's row layout stacks on smaller screens.
+    - The date range picker elements stack vertically.
+    - The ads toolbar elements stack and take full width.
+    - Table columns (`Display Dates`, `Clicks/Views`, `Placement`) are progressively hidden on smaller devices.
+    - Ad thumbnails become smaller on mobile.
+    - Action buttons in the table stack vertically on very small screens.
+
+The HTML (`ads-management.html`) is structured with two main sections: one for uploading new ads and another for listing/managing current ads. It uses common form and table structures that are styled by `dashboard.css` and then refined by `ads-management.css`. Pagination is included, assuming it will reuse existing styles. No modal is explicitly defined in this step, but the upload form itself serves a similar purpose for creating new ads.
+/* Inherits common styles from dashboard.css */
+
+/* Page-specific styles for Blog Management */
+
+.blog-toolbar {
+    /* .toolbar styles from dashboard.css or other specific CSS can be base */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.blog-toolbar .toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.blog-toolbar .search-input {
+    min-width: 220px; /* Adjust as needed */
+}
+
+.blog-toolbar .filter-select {
+    /* Styles from voucher-management.css or dashboard.css for .filter-select */
+    min-width: 150px; /* Adjust as needed */
+}
+
+.blog-toolbar .filter-btn,
+.blog-toolbar #createNewPostBtn {
+    /* Styles from dashboard.css for .btn, .btn-secondary, .btn-primary */
+}
+.blog-toolbar #createNewPostBtn .icon,
+.blog-toolbar .filter-btn .icon {
+    margin-right: 8px;
+}
+
+/* Blog Post Card Specific Styles */
+/* .card-grid-container is defined in dashboard.css */
+.blog-posts-grid {
+    /* Specific grid settings if different from generic .card-grid-container */
+}
+
+.blog-post-card {
+    /* .card styles are inherited from dashboard.css */
+    /* Specific overrides for blog post cards */
+}
+
+.blog-post-card .card-image-placeholder {
+    /* Styles from dashboard.css */
+    height: 200px; /* Standard height for blog post images */
+    font-size: 0.9em;
+}
+
+.blog-post-card .card-content {
+    /* Styles from dashboard.css */
+    position: relative; /* For positioning post-status */
+    padding-bottom: 15px; /* Adjust padding if needed */
+}
+
+.blog-post-card .card-title {
+    /* Styles from dashboard.css */
+    font-size: 1.3em; /* Slightly larger for blog titles */
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.blog-post-card .card-meta {
+    /* Styles from dashboard.css */
+    font-size: 0.8em;
+    color: #777;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+.blog-post-card .card-meta .post-category {
+    font-weight: 600;
+    color: #001f3f; /* Navy Blue */
+    background-color: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+.blog-post-card .card-meta .post-date,
+.blog-post-card .card-meta .post-author {
+    /* Additional specific styling if needed */
+}
+
+.post-status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.7em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px; /* Space below status */
+    color: #fff; /* Default, overridden by specific statuses */
+}
+.post-status.status-published {
+    background-color: #28a745; /* Green */
+}
+.post-status.status-draft {
+    background-color: #ffc107; /* Yellow */
+    color: #333; /* Dark text for yellow */
+}
+.post-status.status-archived {
+    background-color: #6c757d; /* Grey */
+}
+/* Ensure these don't clash with .status-badge if used differently */
+
+
+.blog-post-card .card-description {
+    /* Styles from dashboard.css */
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.blog-post-card .card-actions {
+    /* Styles from dashboard.css */
+    /* Specific adjustments if needed */
+}
+.blog-post-card .card-actions .btn .icon {
+    margin-right: 6px;
+}
+.blog-post-card .card-actions .btn.disabled { /* Style for disabled button */
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #adb5bd; /* Lighter grey */
+    border-color: #adb5bd;
+}
+.blog-post-card .card-actions .btn.disabled:hover {
+    background-color: #adb5bd; /* No color change on hover */
+    color: #ffffff;
+}
+
+
+/* Pagination for blog posts - reusing .pagination from user-management.css */
+.blog-pagination {
+    /* Styles are inherited if .pagination class is used. */
+}
+
+
+/* Modal specific styles for Create/Edit Blog Post form */
+#blogPostModal .modal-dialog.modal-lg { /* Bootstrap class name for large modal */
+    max-width: 800px; /* Wider modal for rich text editor / more fields */
+}
+@media (min-width: 992px) { /* Corresponds to Bootstrap's -lg breakpoint */
+    #blogPostModal .modal-dialog.modal-lg {
+        max-width: 800px;
+    }
+}
+
+
+#blogPostForm #postContent {
+    min-height: 200px; /* Taller textarea for content */
+}
+
+#blogPostForm .form-row { /* From exam-management.css or define here */
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+#blogPostForm .form-row .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+#blogPostForm .form-text.text-muted { /* Helper text style */
+    font-size: 0.85em;
+    color: #6c757d;
+}
+
+
+/* Responsive adjustments for blog management page */
+@media (max-width: 992px) { /* Larger tablets / smaller desktops */
+    .blog-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .blog-toolbar .toolbar-left {
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .blog-toolbar #createNewPostBtn {
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-toolbar .toolbar-left {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .blog-toolbar .search-input,
+    .blog-toolbar .filter-select,
+    .blog-toolbar .filter-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    /* Card grid columns will adjust based on .card-grid-container styles in dashboard.css */
+    /* Usually to 1 or 2 columns on tablet */
+}
+
+@media (max-width: 600px) {
+    .blog-post-card .card-title {
+        font-size: 1.15em; /* Adjust title size for mobile */
+    }
+    .blog-post-card .card-meta {
+        font-size: 0.75em; /* Smaller meta text */
+    }
+    .post-status {
+        font-size: 0.65em; /* Smaller status badge */
+        padding: 3px 8px;
+    }
+    .blog-post-card .card-actions {
+        flex-direction: column; /* Stack action buttons */
+        gap: 8px;
+    }
+    .blog-post-card .card-actions .btn {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    #blogPostForm .form-row {
+        flex-direction: column; /* Stack form row inputs in modal */
+        gap: 0;
+    }
+    #blogPostForm .form-row .form-group {
+        margin-bottom: 15px;
+    }
+    #blogPostModal .modal-dialog.modal-lg {
+        margin: 10px; /* Full width modal on small screens */
+        max-width: calc(100% - 20px);
+    }
+}
+```
+
+This CSS for `blog-management.css`:
+- Styles the toolbar with search and filter options, similar to previous pages but adapted for blog content.
+- Enhances the blog post cards:
+    - Defines a standard height for the featured image placeholder.
+    - Styles metadata like category, date, and author.
+    - Adds distinct status indicators (`Published`, `Draft`, `Archived`) within the card content.
+    - Includes a specific style for disabled buttons in card actions (e.g., Edit button for an archived post).
+- Assumes pagination reuses existing styles.
+- Styles the "Create/Edit Blog Post" modal:
+    - Makes the modal dialog larger (`modal-lg`) to accommodate more fields and potentially a rich text editor.
+    - Provides a taller textarea for the post content.
+    - Styles helper text for file inputs.
+- Includes responsive adjustments for the toolbar, blog cards (title, meta, status), card actions, and the modal form elements for various screen sizes.
+
+The HTML structure in `blog-management.html` reflects these elements, using the card layout for posts and including the structural placeholder for the larger modal. Common styles from `dashboard.css` are leveraged throughout.
+
+/* Inherits common styles from dashboard.css */
+
+/* Page-specific styles for Exam Management */
+
+.toolbar { /* Reusing toolbar style from user-management or dashboard.css if generic enough */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.toolbar .search-input { /* Assuming .search-input is defined in dashboard.css or user-management.css */
+    width: 320px;
+}
+
+.toolbar .btn-primary .icon {
+    margin-right: 8px;
+}
+
+/* Exam Card Specific Styles */
+/* .card-grid-container is defined in dashboard.css */
+
+.exam-card {
+    /* .card styles are inherited from dashboard.css */
+    position: relative; /* For absolute positioning of status badge */
+}
+
+.exam-card .card-content {
+    padding-top: 40px; /* Space for the status badge */
+}
+
+.exam-status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    border-radius: 20px; /* Pill shape */
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff; /* Default text color, can be overridden by specific status */
+    z-index: 1; /* Ensure it's above other card content if overlapping */
+}
+
+/* Specific status colors - reusing .status-badge styles from dashboard.css if they match */
+.exam-status.status-active {
+    background-color: #28a745; /* Green */
+    color: #fff;
+}
+.exam-status.status-pending, .exam-status.status-upcoming { /* Added upcoming */
+    background-color: #ffc107; /* Yellow */
+    color: #333; /* Dark text for yellow background */
+}
+.exam-status.status-inactive, .exam-status.status-closed { /* Added closed */
+    background-color: #6c757d; /* Grey */
+    color: #fff;
+}
+.exam-status.status-draft { /* Added draft */
+    background-color: #17a2b8; /* Teal / Info */
+    color: #fff;
+}
+
+
+.exam-card .card-title {
+    /* Inherits from .card-title in dashboard.css */
+    /* Add specific overrides if needed */
+    margin-bottom: 8px;
+}
+
+.exam-card .card-meta {
+    /* Inherits from .card-meta in dashboard.css */
+    font-size: 0.8em; /* Slightly smaller for exam meta */
+    margin-bottom: 12px;
+}
+
+.exam-card .card-description {
+    /* Inherits from .card-description in dashboard.css */
+    font-size: 0.9em; /* Slightly smaller for exam description */
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.exam-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    margin-top: 10px;
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 15px; /* Space before actions */
+}
+.exam-stats div {
+    text-align: center;
+    font-size: 0.85em;
+    color: #555;
+}
+.exam-stats div span {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    color: #777;
+}
+.exam-stats div strong {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #001f3f; /* Navy Blue */
+}
+
+
+.exam-card .card-actions {
+    /* Inherits from .card-actions in dashboard.css */
+    /* Add specific overrides if needed, e.g., more space for exam buttons */
+    gap: 8px; /* Slightly smaller gap for more buttons */
+}
+
+.exam-card .card-actions .btn .icon {
+    margin-right: 6px;
+}
+.exam-card .card-actions .btn-delete .icon { /* For icon-only delete button */
+    margin-right: 0;
+}
+
+
+/* Pagination for exams - reusing .pagination from user-management.css */
+.exam-pagination {
+    /* Styles are inherited if .pagination class is used. Add overrides if needed. */
+}
+
+
+/* Modal specific styles for exam form */
+/* .modal, .modal-dialog, .modal-content, etc. are defined in user-management.css or dashboard.css */
+/* We can add specific overrides if the exam modal needs to be different */
+
+#examModal .modal-dialog {
+    max-width: 650px; /* Slightly wider modal for exam form */
+}
+
+#examForm .form-row { /* Simple row for side-by-side inputs */
+    display: flex;
+    gap: 20px; /* Space between columns */
+    margin-bottom: 15px; /* Consistent with form-group margin */
+}
+#examForm .form-row .form-group {
+    flex: 1; /* Each group takes equal space */
+    margin-bottom: 0; /* Remove bottom margin as row handles it */
+}
+#examForm .form-row .form-group.col-md-6 { /* Mimicking Bootstrap column */
+    /* flex: 0 0 50%; /* If specific sizing is needed and gap isn't enough */
+}
+
+
+/* Responsive adjustments for exam management page */
+@media (max-width: 768px) {
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    .toolbar .search-input {
+        width: 100%;
+    }
+    .toolbar .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+    /* Card grid columns will adjust based on .card-grid-container styles in dashboard.css */
+    /* Usually to 1 or 2 columns on tablet */
+
+    .exam-stats {
+        flex-wrap: wrap; /* Allow stats to wrap */
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    .exam-stats div {
+        flex-basis: calc(50% - 10px); /* Two items per row in stats */
+        text-align: left;
+    }
+}
+
+@media (max-width: 600px) {
+    .exam-card .card-content {
+        padding-top: 50px; /* More space if status badge is larger or text wraps */
+    }
+    .exam-status {
+        font-size: 0.7em;
+        padding: 5px 10px;
+    }
+    .exam-card .card-title {
+        font-size: 1.1em;
+    }
+    .exam-stats div {
+        flex-basis: 100%; /* Stack stats items vertically */
+        margin-bottom: 8px;
+    }
+    .exam-stats div:last-child {
+        margin-bottom: 0;
+    }
+    .exam-card .card-actions {
+        flex-direction: column; /* Stack action buttons */
+        gap: 10px;
+    }
+    .exam-card .card-actions .btn {
+        width: 100%;
+        box-sizing: border-box; /* Ensure padding doesn't break layout */
+        text-align: center;
+    }
+    #examForm .form-row {
+        flex-direction: column; /* Stack form row inputs */
+        gap: 0; /* Remove gap, rely on form-group margin */
+    }
+    #examForm .form-row .form-group {
+        margin-bottom: 15px; /* Add back form-group margin */
+    }
+}
+```
+
+This CSS file for exam management includes:
+- Styles for the toolbar (reusing existing classes but showing how icons could be added).
+- Specific styling for the exam cards, including an absolutely positioned status badge, layout for exam metadata, a simple stats section within the card, and adjustments for action buttons.
+- Placeholder for pagination (assuming it reuses the `.pagination` styles from `user-management.css` or `dashboard.css`).
+- Specific adjustments for the exam creation/edit modal, such as making it slightly wider and providing basic styling for a form row with side-by-side inputs.
+- Responsive adjustments for tablets and mobile screens, focusing on the toolbar, card layout, and the new `exam-stats` section.
+
+The structure relies heavily on the common styles defined in `dashboard.css` for cards, buttons, forms, and modals, only adding specific overrides or new styles where needed for the exam management page. The HTML for the modal is included in `exam-management.html` as a non-functional structural placeholder.
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.exam-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+.exam-header h1 {
+  font-size: 28px;
+  color: #001f3f;
+}
+
+.exam-header p {
+  font-size: 14px;
+  color: #666;
+}
+
+.exam-details h2,
+.question-form-section h2,
+.added-questions h2 {
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+.exam-info-form input,
+.exam-info-form textarea,
+.question-form textarea,
+.question-form input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.option-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.option-group input[type="text"] {
+  flex: 1;
+}
+
+.option-group label {
+  white-space: nowrap;
+}
+
+.add-question-btn,
+.publish-btn {
+  display: inline-block;
+  background-color: #001f3f;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-question-btn:hover,
+.publish-btn:hover {
+  background-color: #003366;
+}
+
+.publish-btn-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.question-list {
+  padding: 15px;
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef; /* Light grey background for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.login-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-header .logo {
+    width: 80px; /* Adjust as needed */
+    height: 80px; /* Adjust as needed */
+    margin-bottom: 15px;
+    background-color: #001f3f; /* Placeholder background */
+    border-radius: 50%; /* If the logo is circular */
+    padding: 5px; /* If the logo needs some space */
+    display: inline-block; /* To center it if text-align center is on parent */
+}
+
+.login-header h2 {
+    color: #001f3f; /* Navy Blue */
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.login-header p {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #001f3f; /* Navy Blue */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.input-group input:focus {
+    border-color: #001f3f; /* Navy Blue */
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 31, 63, 0.25);
+}
+
+.login-button {
+    background-color: #001f3f; /* Navy Blue */
+    color: #ffffff; /* White */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #FFD700; /* Gold */
+    color: #001f3f; /* Navy Blue for text on gold hover */
+}
+
+.login-footer {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #777;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 25px;
+    }
+
+    .login-header h2 {
+        font-size: 20px;
+    }
+
+    .login-header p {
+        font-size: 12px;
+    }
+}
+
+/* Inherits common styles from dashboard.css */
+
+/* Page-specific styles for Logout page */
+
+.main-content .header {
+    /* Optional: Slightly different header style for logout page if needed */
+    /* e.g., less prominent or different background */
+}
+
+.content-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    min-height: calc(100vh - 70px - 60px); /* Full height minus header and potential footer, adjust as needed */
+    /* If sidebar footer is not part of main-content height, then (100vh - header height) */
+}
+
+.logout-message-container {
+    background-color: #ffffff;
+    padding: 40px 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+.logout-icon {
+    font-size: 4em; /* Large icon */
+    color: #001f3f; /* Navy Blue */
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.logout-message-container h2 {
+    font-size: 1.8em;
+    color: #001f3f; /* Navy Blue */
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.logout-message-container p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.logout-message-container .btn {
+    /* .btn styles from dashboard.css are inherited */
+    padding: 12px 25px;
+    font-size: 1em;
+    margin: 10px 5px; /* Space around buttons */
+    min-width: 200px; /* Minimum width for buttons */
+}
+.logout-message-container .btn .icon {
+    margin-right: 8px;
+}
+
+.login-again-btn {
+    /* .btn-primary styles from dashboard.css */
+}
+.login-again-btn:hover {
+    /* .btn-primary:hover styles from dashboard.css */
+}
+
+.back-to-website-btn {
+    /* .btn-secondary styles from dashboard.css */
+    background-color: #6c757d; /* Grey */
+    color: #ffffff;
+}
+.back-to-website-btn:hover {
+    background-color: #5a6268; /* Darker grey */
+}
+
+
+/* Responsive adjustments for logout page */
+@media (max-width: 768px) {
+    .content-area {
+        padding: 20px; /* Add padding for smaller screens */
+        justify-content: flex-start; /* Align to top on smaller screens if preferred */
+        padding-top: 50px;
+    }
+    .logout-message-container {
+        padding: 30px 25px;
+    }
+    .logout-message-container h2 {
+        font-size: 1.6em;
+    }
+    .logout-message-container p {
+        font-size: 1em;
+    }
+    .logout-message-container .btn {
+        width: 100%; /* Stack buttons */
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Sidebar might be handled differently on mobile (e.g., hidden or top bar)
+       If sidebar is still present and taking space, content area adjustments might be needed.
+       Assuming dashboard.css handles mobile sidebar state.
+    */
+    .logout-icon {
+        font-size: 3em;
+    }
+    .logout-message-container h2 {
+        font-size: 1.4em;
+    }
+    .logout-message-container p {
+        font-size: 0.95em;
+    }
+}
+
+/*
+  Note on active sidebar link for logout.html:
+  Usually, a "Logout" action redirects immediately. If it's a page,
+  the "Logout" link in the sidebar being 'active' is a bit unusual.
+  Alternatively, no link could be active, or the sidebar could be visually distinct
+  (e.g., all links greyed out except for a "Login" link if the session is truly ended).
+  The current HTML marks it active for consistency with other pages' approach.
+*/
+```
+
+This CSS for `logout.css`:
+- **Layout:** Centers the logout confirmation message box both vertically and horizontally within the content area.
+- **Message Container:** Styles the box containing the logout message, icon, and action buttons, giving it a clean, card-like appearance.
+- **Icon and Text:** Styles the large logout icon and the confirmation text.
+- **Action Buttons:** Styles the "Login Again" and "Go to Main Website" buttons, ensuring they are prominent and appropriately spaced. It assumes base button styles from `dashboard.css`.
+- **Responsive Design:**
+    - On smaller screens, the content area gets padding, and the vertical alignment might shift to `flex-start` if preferred.
+    - The message container's padding is reduced.
+    - Text and icon sizes are adjusted.
+    - Action buttons stack vertically to fit smaller viewports.
+
+The HTML (`logout.html`) includes the standard sidebar and header (though the header's user info might be shown as faded or generic). The main content area is dedicated to the logout confirmation message. The "Logout" link in the sidebar is marked as active for this page, though this behavior could be debated in a real application where logout is typically an immediate action. The "Go to Main Website" button currently has `href="#"` as a placeholder.
+
+/* Inherits common styles from dashboard.css */
+
+/* Page-specific styles for Notification Management */
+
+/* Send Notification Section */
+.send-notification-section {
+    /* .form-container styles from dashboard.css */
+    margin-bottom: 40px;
+}
+.send-notification-section .section-title {
+    /* .section-title styles from ads-management.css or define here */
+    font-size: 1.5em;
+    color: #001f3f;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FFD700;
+}
+
+#sendNotificationForm .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 0;
+}
+#sendNotificationForm .form-row .form-group {
+    flex: 1;
+    margin-bottom: 15px;
+}
+#sendNotificationForm .form-group label.inline-label { /* For checkbox label */
+    font-weight: normal; /* Standard weight for checkbox label */
+    margin-left: 8px;
+    color: #333; /* Standard text color */
+    font-size: 0.95em;
+}
+#sendNotificationForm input[type="checkbox"] {
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+}
+
+
+/* Sent Notifications Log Section */
+.sent-notifications-section .section-title {
+    /* .section-title styles */
+    font-size: 1.5em;
+    color: #001f3f;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FFD700;
+}
+
+.notifications-toolbar {
+    /* .toolbar styles from dashboard.css or other specific CSS */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+.notifications-toolbar .search-input,
+.notifications-toolbar .filter-select {
+    /* Styles from dashboard.css or other specific CSS */
+    margin-right: 10px;
+}
+
+/* Notification List Styles */
+.notification-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notification-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start; /* Align icon and content to the top */
+    gap: 20px;
+    border-left: 5px solid transparent; /* For type indication */
+}
+
+.notification-icon {
+    font-size: 1.8em; /* Icon size */
+    width: 40px; /* Fixed width for icon container */
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Icon color */
+}
+
+.notification-content {
+    flex-grow: 1;
+}
+
+.notification-list-title {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #001f3f; /* Navy Blue */
+    font-weight: 600;
+}
+
+.notification-list-message {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    color: #333;
+    line-height: 1.5;
+}
+
+.notification-meta {
+    font-size: 0.8em;
+    color: #777;
+    display: block; /* Ensure it takes its own line */
+}
+
+.notification-actions {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 8px;
+    align-items: flex-end; /* Align buttons to the right if container allows */
+    min-width: 100px; /* Ensure some space for buttons */
+}
+.notification-actions .btn-sm { /* Custom class for smaller buttons in list view */
+    padding: 5px 10px;
+    font-size: 0.8em;
+}
+.notification-actions .btn .icon {
+    margin-right: 4px;
+}
+
+
+/* Notification Item Types */
+.notification-item.type-info {
+    border-left-color: #17a2b8; /* Teal/Info blue */
+}
+.notification-item.type-info .notification-icon {
+    background-color: #17a2b8;
+}
+
+.notification-item.type-success {
+    border-left-color: #28a745; /* Green */
+}
+.notification-item.type-success .notification-icon {
+    background-color: #28a745;
+}
+
+.notification-item.type-warning {
+    border-left-color: #ffc107; /* Yellow */
+}
+.notification-item.type-warning .notification-icon {
+    background-color: #ffc107;
+    color: #333; /* Dark icon for yellow background */
+}
+
+.notification-item.type-error {
+    border-left-color: #dc3545; /* Red */
+}
+.notification-item.type-error .notification-icon {
+    background-color: #dc3545;
+}
+
+
+/* Pagination for notifications */
+.notifications-pagination {
+    /* .pagination styles from dashboard.css */
+    margin-top: 25px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    #sendNotificationForm .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    #sendNotificationForm .form-row .form-group {
+        margin-bottom: 15px;
+    }
+    .notifications-toolbar {
+        justify-content: space-between;
+    }
+    .notifications-toolbar .search-input {
+        flex-grow: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .notifications-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .notifications-toolbar .search-input,
+    .notifications-toolbar .filter-select,
+    .notifications-toolbar .filter-btn {
+        width: 100%;
+        box-sizing: border-box;
+        margin-right: 0;
+    }
+
+    .notification-item {
+        flex-direction: column; /* Stack icon, content, actions vertically */
+        align-items: stretch; /* Full width for children */
+        gap: 15px;
+    }
+    .notification-icon {
+        align-self: flex-start; /* Align icon to the start when stacked */
+        margin-bottom: 5px; /* Space below icon */
+    }
+    .notification-actions {
+        flex-direction: row; /* Horizontal buttons on smaller screens if stacked */
+        justify-content: flex-end; /* Align to right */
+        width: 100%;
+    }
+    .notification-actions .btn-sm {
+        flex-grow: 1; /* Make buttons take equal space if needed */
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 1.3em;
+    }
+    .notification-list-title {
+        font-size: 1.1em;
+    }
+    .notification-list-message {
+        font-size: 0.9em;
+    }
+    .notification-actions {
+        /* Already row from tablet, can adjust further if needed */
+    }
+    .notification-actions .btn-sm .icon {
+        margin-right: 0; /* Icon only for very small buttons */
+    }
+     .notification-actions .btn-sm span:not(.icon) {
+        display: none; /* Hide text */
+    }
+    .notification-actions .btn-sm {
+        padding: 6px 8px; /* Adjust padding for icon-only */
+    }
+}
+```
+
+Key CSS elements in `notification-management.css`:
+- **Send Notification Form:** Utilizes common form styles, with specific layout for form rows and inline checkbox labels.
+- **Sent Notifications Log:**
+    - Includes a toolbar for filtering notifications.
+    - Styles a list of notifications (`.notification-list` and `.notification-item`).
+    - Each notification item has a distinct colored left border and icon background based on its type (Info, Success, Warning, Error).
+    - Notification content (title, message, metadata) is styled for readability.
+    - Action buttons within each notification item are styled to be compact and stack vertically by default.
+- **Responsive Design:**
+    - The send notification form rows stack on smaller screens.
+    - The notifications toolbar elements stack.
+    - Notification items themselves stack their main components (icon, content, actions) on smaller tablet sizes.
+    - Action buttons within notification items switch to a horizontal layout on tablets (when the item itself is stacked) and can be made icon-only on very small screens.
+
+The HTML (`notification-management.html`) provides the structure for the form to send notifications and the list to display sent notifications, with appropriate classes for styling. Pagination is included, reusing existing styles.
+
+/* Inherits common styles from dashboard.css */
+
+/* Page-specific styles for Settings */
+
+.settings-container {
+    /* Main wrapper for settings content if needed, e.g. max-width */
+    max-width: 900px; /* Example max width for better readability of forms */
+    margin: 0 auto; /* Center the settings container */
+}
+
+.settings-tabs {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #dee2e6; /* Light grey border */
+}
+
+.tab-link {
+    padding: 12px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 1.05em;
+    font-weight: 500;
+    color: #495057; /* Subdued color for inactive tabs */
+    border-bottom: 3px solid transparent; /* For active indicator */
+    margin-bottom: -2px; /* Align with container's border */
+    transition: color 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+.tab-link:hover {
+    color: #001f3f; /* Navy Blue */
+}
+
+.tab-link.active {
+    color: #001f3f; /* Navy Blue */
+    border-bottom-color: #FFD700; /* Gold accent for active tab */
+    font-weight: 600;
+}
+
+.tab-content {
+    display: none; /* Hidden by default */
+    /* .form-container styles from dashboard.css will apply if class is used */
+    /* Add specific padding if .form-container is not used directly or needs override */
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners if tabs are on top */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border: 1px solid #dee2e6; /* Match tab border */
+    border-top: none; /* Remove top border as tabs handle it */
+}
+
+.tab-content.active {
+    display: block; /* Shown when active */
+    animation: fadeInTab 0.4s ease-in-out;
+}
+
+@keyframes fadeInTab {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-content .section-title {
+    /* .section-title styles from other CSS or define here */
+    font-size: 1.4em; /* Slightly smaller for tab content sections */
+    color: #001f3f;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #FFD700; /* Lighter gold accent */
+}
+
+.tab-content .subsection-title {
+    font-size: 1.15em;
+    color: #001f3f;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
+/* Profile Settings Specific */
+.profile-avatar-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+.profile-avatar-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #FFD700; /* Gold border */
+    background-color: #e9ecef; /* Placeholder bg */
+}
+.profile-avatar-section .form-group {
+    flex-grow: 1;
+    margin-bottom: 0; /* Remove margin as it's part of a flex group */
+}
+.profile-avatar-section .form-group label {
+    /* Standard label style */
+}
+.profile-avatar-section .form-group small {
+    display: block;
+    font-size: 0.8em;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+/* Application Settings Specific */
+.app-logo-preview-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 10px; /* Space before file input if on separate line */
+}
+.app-logo-preview {
+    max-width: 150px;
+    max-height: 60px;
+    object-fit: contain;
+    border: 1px solid #e0e0e0;
+    padding: 5px;
+    background-color: #f8f9fa;
+}
+#appSettingsForm .form-group small,
+#securitySettingsForm .form-group small { /* General small text styling in forms */
+    display: block;
+    font-size: 0.85em;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+
+/* Common form styles like .form-row, .form-group col-md-6 are inherited from dashboard.css */
+/* Or defined in specific page CSS if needed, e.g., exam-management.css */
+#adminProfileForm .form-row,
+#appSettingsForm .form-row, /* If any */
+#securitySettingsForm .form-row { /* If any */
+    display: flex;
+    gap: 20px;
+    margin-bottom: 0; /* Rely on individual form-group margins */
+}
+#adminProfileForm .form-row .form-group,
+#appSettingsForm .form-row .form-group,
+#securitySettingsForm .form-row .form-group {
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+
+/* Responsive adjustments for settings page */
+@media (max-width: 768px) {
+    .settings-container {
+        max-width: 100%;
+        margin: 0;
+    }
+    .settings-tabs {
+        flex-direction: column; /* Stack tabs vertically */
+        border-bottom: none; /* Remove bottom border as tabs stack */
+    }
+    .tab-link {
+        border-bottom: 1px solid #dee2e6; /* Separator for stacked tabs */
+        margin-bottom: 0;
+        text-align: left;
+        border-radius: 4px 4px 0 0; /* Rounded top if active */
+    }
+    .tab-link.active {
+        border-bottom-color: #FFD700; /* Keep gold for active */
+        border-width: 1px 1px 3px 1px; /* Active border all around slightly */
+        border-style: solid;
+        border-color: #dee2e6 #dee2e6 #FFD700 #dee2e6;
+    }
+    .tab-content {
+        border-radius: 0 0 8px 8px; /* Ensure consistency if tabs stack */
+        /* Or remove border if tabs become accordion-like */
+    }
+    #adminProfileForm .form-row,
+    #appSettingsForm .form-row,
+    #securitySettingsForm .form-row {
+        flex-direction: column; /* Stack form row inputs */
+        gap: 0;
+    }
+    #adminProfileForm .form-row .form-group,
+    #appSettingsForm .form-row .form-group,
+    #securitySettingsForm .form-row .form-group {
+        margin-bottom: 15px; /* Add back form-group margin */
+    }
+    .profile-avatar-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .profile-avatar-section .form-group {
+        width: 100%; /* Full width for file input group */
+    }
+}
+
+@media (max-width: 600px) {
+    .tab-link {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+    .tab-content {
+        padding: 20px;
+    }
+    .tab-content .section-title {
+        font-size: 1.2em;
+    }
+    .app-logo-preview-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .app-logo-preview {
+        margin-bottom: 10px;
+    }
+}
+```
+The CSS for `settings.css` includes:
+- **Tab Navigation:** Styles for a tabbed interface (`.settings-tabs`, `.tab-link`, `.tab-content`) to switch between different settings sections (Profile, Application, Security). Active tabs are highlighted with a gold bottom border.
+- **Tab Content:** Basic styling for the content areas within each tab, ensuring they are displayed correctly when active.
+- **Profile Settings:**
+    - Specific layout for the avatar upload section, including preview.
+    - Standard form styling for username, email, and password change fields.
+- **Application Settings:**
+    - Layout for application logo upload with preview.
+    - Styling for other application-specific settings like maintenance mode.
+- **Security Settings:**
+    - Styling for 2FA options, session timeout, and allowed IP addresses.
+- **Responsive Design:**
+    - Tabs stack vertically on smaller screens.
+    - Form rows within tabs stack their input fields.
+    - The profile avatar section and app logo upload section adjust their layout for smaller screens.
+
+The HTML (`settings.html`) sets up this tabbed structure. A small, inline JavaScript snippet is included in the HTML for basic tab functionality (switching active tabs and content). In a production application, this JS would typically be in a separate file and might be more robust. The forms within each tab use common form element classes styled by `dashboard.css`, with refinements from `settings.css`.
+
+
+/* Inherits common styles from dashboard.css */
+
+/* Page-specific styles for Voucher Management */
+
+.voucher-toolbar {
+    /* .toolbar styles from dashboard.css or user-management.css can be base */
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for more filters */
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px; /* Space between items/groups */
+}
+
+.voucher-toolbar .toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between filter elements */
+    flex-wrap: wrap; /* Allow filters to wrap on smaller screens */
+}
+
+.voucher-toolbar .search-input {
+    /* Assuming .search-input is defined in dashboard.css */
+    min-width: 250px; /* Adjust width as needed */
+}
+
+.filter-select {
+    padding: 9px 12px; /* Match search input padding height */
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.95em;
+    background-color: #fff;
+    height: 40px; /* Consistent height with inputs/buttons */
+    box-sizing: border-box;
+}
+.filter-select:focus {
+    border-color: #001f3f;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 31, 63, 0.2);
+}
+
+.filter-btn {
+    /* Uses .btn and .btn-secondary from dashboard.css */
+    padding: 9px 15px; /* Match input height */
+}
+.filter-btn .icon {
+    margin-right: 6px;
+}
+
+#generateVoucherBtn {
+    /* Uses .btn and .btn-primary from dashboard.css */
+    padding: 9px 18px; /* Match input height */
+}
+#generateVoucherBtn .icon {
+    margin-right: 8px;
+}
+
+/* Voucher Table Specific Styles */
+.voucher-table th:first-child, /* Checkbox column */
+.voucher-table td:first-child {
+    width: 40px; /* Narrow column for checkbox */
+    text-align: center;
+}
+.voucher-table th:first-child input[type="checkbox"],
+.voucher-table td:first-child input[type="checkbox"] {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.voucher-table .action-buttons .btn {
+    /* Styles for action buttons are inherited from dashboard.css */
+    /* Make them smaller if needed, e.g., for icon-only buttons */
+    padding: 5px 8px; /* Smaller padding for compact buttons */
+}
+.voucher-table .action-buttons .btn .icon {
+    margin-right: 0; /* Typically icon-only in this context */
+    font-size: 1.1em; /* Slightly larger icon if it's the only content */
+}
+
+
+/* Bulk Actions Container */
+.bulk-actions-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px; /* Space above pagination or content end */
+    padding: 15px 20px;
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+.bulk-actions-container select {
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9em;
+    min-width: 180px; /* Minimum width for the select dropdown */
+}
+.bulk-actions-container .apply-bulk-action-btn {
+    /* Uses .btn and .btn-secondary from dashboard.css */
+    font-size: 0.9em;
+}
+
+
+/* Pagination for vouchers - reusing .pagination from user-management.css */
+.voucher-pagination {
+    /* Styles are inherited if .pagination class is used. Add overrides if needed. */
+}
+
+
+/* Modal specific styles for Generate Vouchers form */
+/* .modal, .modal-dialog, .modal-content, etc. are defined in dashboard.css or user-management.css */
+
+#generateVoucherModal .modal-dialog {
+    max-width: 600px; /* Suitable width for this form */
+}
+
+#generateVoucherForm .form-group label {
+    /* Ensure labels are styled if not already by common form styles */
+}
+#generateVoucherForm input[type="number"],
+#generateVoucherForm input[type="text"],
+#generateVoucherForm select {
+    /* Ensure inputs are styled if not already by common form styles */
+}
+
+
+/* Responsive adjustments for voucher management page */
+@media (max-width: 992px) { /* Larger tablets / smaller desktops */
+    .voucher-toolbar {
+        flex-direction: column; /* Stack main groups */
+        align-items: stretch; /* Make groups take full width */
+    }
+    .voucher-toolbar .toolbar-left {
+        justify-content: flex-start; /* Align filters to start */
+        width: 100%;
+    }
+    #generateVoucherBtn {
+        width: 100%; /* Full width button */
+        margin-top: 10px; /* Space if stacked */
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .voucher-toolbar .toolbar-left {
+        flex-direction: column; /* Stack filter elements */
+        align-items: stretch;
+        gap: 10px;
+    }
+    .voucher-toolbar .search-input,
+    .voucher-toolbar .filter-select,
+    .voucher-toolbar .filter-btn {
+        width: 100%; /* Full width for all filter elements */
+        box-sizing: border-box;
+    }
+
+    /* Example: Hide less critical columns on smaller screens for voucher table */
+    .voucher-table th:nth-child(6), /* Expiry Date */
+    .voucher-table td:nth-child(6),
+    .voucher-table th:nth-child(7), /* Assigned To */
+    .voucher-table td:nth-child(7) {
+        display: none;
+    }
+    .bulk-actions-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .bulk-actions-container select,
+    .bulk-actions-container .apply-bulk-action-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Further hide or simplify table columns if needed */
+    .voucher-table th:nth-child(3), /* Type */
+    .voucher-table td:nth-child(3),
+    .voucher-table th:nth-child(5), /* Date Generated */
+    .voucher-table td:nth-child(5) {
+        display: none;
+    }
+
+    .voucher-table .action-buttons {
+        /* Could make buttons stack vertically or ensure enough space */
+        display: flex;
+        flex-direction: column; /* Stack buttons in actions column */
+        gap: 5px;
+    }
+    .voucher-table .action-buttons .btn {
+        width: 100%; /* Make action buttons full width of their cell part */
+        text-align: center;
+    }
+}
+```
+
+Key features of this CSS:
+- **Toolbar Styling:** Enhanced toolbar with flex-wrap for responsiveness, specific styling for filter dropdowns and buttons.
+- **Table Enhancements:** Specific width for the checkbox column and centered content. Action buttons are styled to be more compact, suitable for icon-only use.
+- **Bulk Actions:** A new section for bulk operations with a dropdown and an "Apply" button, styled for clarity.
+- **Modal Styling:** Placeholder for the "Generate Vouchers" modal, assuming it uses common modal styles but noting that its dialog might have a specific width.
+- **Responsive Design:**
+    - Toolbar items stack appropriately on smaller screens.
+    - Table columns (`Expiry Date`, `Assigned To`, `Type`, `Date Generated`) are progressively hidden on smaller devices to prevent horizontal overflow.
+    - Bulk actions container elements also stack on smaller screens.
+    - Action buttons within the table are styled to stack vertically on very small screens for better usability.
+
+This CSS builds upon the common styles in `dashboard.css` and provides the necessary specific styles for the voucher management interface. The corresponding HTML includes the structure for these elements, including the non-functional modal placeholder.
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  background: #ffffff;
+  color: #00205b;
+}
+
+/* Containers */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+/* Header */
+.hero {
+  background: navy;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 2.8em;
+  color: gold;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+/* Banner Image */
+.image-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* About Section */
+.about h2,
+.mission-vision h2,
+.director-message h2,
+.leaders h2 {
+  font-size: 2em;
+  color: navy;
+  margin-bottom: 20px;
+  border-left: 5px solid gold;
+  padding-left: 15px;
+}
+
+.about p,
+.director-message p {
+  margin-bottom: 15px;
+  font-size: 1.05em;
+}
+
+/* Mission and Vision */
+.mission-vision {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.mission,
+.vision {
+  background: #f9f9f9;
+  padding: 20px;
+  border-left: 5px solid gold;
+}
+
+/* Director Message */
+.director-message {
+  background: #f1f5fa;
+  padding: 25px;
+  border-left: 5px solid navy;
+}
+
+/* Leaders */
+.leader-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.leader-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 20px;
+  transition: 0.3s ease;
+  border-radius: 10px;
+}
+
+.leader-card:hover {
+  box-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
+  border-color: gold;
+}
+
+.leader-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid gold;
+}
+
+.leader-card h3 {
+  margin-bottom: 5px;
+  font-size: 1.1em;
+  color: navy;
+}
+
+.leader-card p {
+  font-size: 0.95em;
+  color: #333;
+}
+
+/* Footer */
+.footer {
+  background: navy;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9em;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.blog-header {
+  background-color: #0b1e39;
+  color: white;
+  padding: 2rem 1.5rem 1rem;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.brand-text h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.brand-text h3 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.welcome-text {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.welcome-text em {
+  font-size: 1.2rem;
+  color: #ffdf6f;
+}
+
+.intro {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+/* Blog Grid */
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.blog-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-card h2 {
+  margin: 1rem;
+  font-size: 1.4rem;
+  color: #0b1e39;
+}
+
+.blog-card p {
+  margin: 0 1rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.read-more {
+  display: inline-block;
+  margin: 0 1rem 1.5rem;
+  background-color: #0b1e39;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.read-more:hover {
+  background-color: #082346;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(to right, #eaeff7, #ffffff);
+  margin: 0;
+  padding: 0;
+  color: #00205b;
+}
+
+.contact-container {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 50px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 50, 0.1);
+  border-top: 6px solid gold;
+}
+
+h1 {
+  text-align: center;
+  color: navy;
+  font-size: 2.6em;
+  margin-bottom: 10px;
+}
+
+.subtext {
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.contact-content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  outline: none;
+  background: #f9f9f9;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  background-color: navy;
+  color: white;
+  padding: 14px;
+  border: none;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: gold;
+  color: navy;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+  background: #f7faff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+}
+
+.contact-info h2 {
+  margin-top: 0;
+  color: navy;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  margin: 8px 0;
+  font-size: 1em;
+}
+
+.map {
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f7fc;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #0c1e3c;
+  color: #fff;
+  padding: 30px 20px;
+  width: 250px;
+}
+
+.sidebar .role {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.sidebar .nav {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar .nav li {
+  margin: 15px 0;
+}
+
+.sidebar .nav a {
+  text-decoration: none;
+  color: #ffffffb2;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.sidebar .nav .active a,
+.sidebar .nav a:hover {
+  color: #ffffff;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  background-color: #fff;
+}
+
+/* Profile Card */
+.profile-card {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0c1e3c;
+  color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  align-items: center;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.profile-info p {
+  margin: 4px 0 6px;
+  font-size: 14px;
+}
+
+.badge {
+  background-color: #c8a600;
+  color: #000;
+  padding: 4px 10px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.stat-card {
+  background: #f4f7fc;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.stat-card p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.stat-card h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* Notifications */
+.notifications {
+  margin-top: 40px;
+}
+
+.notifications h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #0c1e3c;
+}
+
+.note-item {
+  background-color: #f4f7fc;
+  padding: 16px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-item p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.btn {
+  background-color: #0c1e3c;
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.logo-box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo-box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo-img {
+  width: 60px; /* Reduce size */
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%; /* Make it circular */
+  border: 2px solid #fff; /* Optional white border */
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  margin-bottom: 8px;
+}
+.user-info-box {
+  background: #000;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.user-info-box img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  color: #111;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+/* ===== Header ===== */
+.header {
+  background-color: #002147;
+  color: #fff;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 70px;
+}
+
+.header-title h1 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.header-title h3 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ddd;
+}
+
+.domain-link {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* ===== Hero Text ===== */
+.hero-text {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.hero-text h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.hero-text h2 span {
+  color: #f1c40f;
+}
+
+.bible-quote {
+  font-style: italic;
+  color: #cbd6f6;
+  margin-bottom: 20px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn {
+  background-color: white;
+  color: #002147;
+  padding: 10px 25px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid white;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #f1c40f;
+  color: #111;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-outline:hover {
+  background-color: white;
+  color: #002147;
+}
+
+/* ===== Welcome Section ===== */
+.welcome-section {
+  background-color: #fff;
+  padding: 40px 0;
+}
+
+.welcome-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.director-img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.welcome-text p {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* ===== Footer Navigation ===== */
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #f5f5f5;
+  padding: 12px 0;
+  border-top: 1px solid #ddd;
+}
+
+.footer-nav nav {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 600;
+}
+
+.footer-nav a {
+  color: #002147;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-nav a:hover {
+  color: #f1c40f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to right, #002147, #003366);
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 40px 30px;
+}
+
+.login-card {
+  text-align: center;
+}
+
+.logo {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.login-header h2 {
+  font-size: 20px;
+  color: #002147;
+  margin-bottom: 4px;
+}
+
+.subtext {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.login-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #002147;
+  box-shadow: 0 0 0 2px rgba(0, 33, 71, 0.2);
+}
+
+.btn-login {
+  width: 100%;
+  background-color: #002147;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #f1c40f;
+  color: #111;
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.form-footer a {
+  color: #002147;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f7f9;
+}
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.form-box {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 800px;
+}
+
+.logo-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo-header img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.logo-header h2 {
+  font-size: 24px;
+  margin: 5px 0;
+}
+
+.signup-form {
+  width: 100%;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 25px;
+  background-color: #002147;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.signup-btn:hover {
+  background-color: #f1c40f;
+  color: #000;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Royal Ambassadors</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/public.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="public-page">
+    <header class="public-header">
+        <div class="container">
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="Logo" />
+                <div class="logo-text">
+                    <h1>ROYAL AMBASSADORS OF NIGERIA</h1>
+                    <h3>OGUN BAPTIST CONFERENCE</h3>
+                </div>
+            </div>
+            <nav class="public-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-login active">Login</a>
+                <a href="register.html" class="btn btn-signup">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="public-main">
+        <section class="login-section">
+            <div class="form-container" style="max-width: 400px; margin: 2rem auto;">
+                <h2 style="text-align: center;">Member Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-button" style="width: 100%;">Login</button>
+                    <p style="text-align: center; margin-top: 1rem;">
+                        Don't have an account? <a href="register.html">Sign Up</a>
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="public-footer">
+        <div class="container">
+            <p>&copy; 2023 Royal Ambassadors of Nigeria, Ogun Baptist Conference. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
