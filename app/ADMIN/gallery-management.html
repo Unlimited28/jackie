@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Management - Royal Ambassadors</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="../assets/images/logo.png" alt="RAN Logo" class="sidebar-logo">
+            <h3>Admin Panel</h3>
+            <p>Royal Ambassadors NG</p>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="dashboard.html"><span class="icon">&#128200;</span> Dashboard</a></li>
+                <li><a href="user-management.html"><span class="icon">&#128101;</span> User Management</a></li>
+                <li><a href="exam-management.html"><span class="icon">&#128221;</span> Exam Management</a></li>
+                <li><a href="finance_dashboard.html"><span class="icon">&#128179;</span> Finance Dashboard</a></li>
+                <li><a href="blog-management.html"><span class="icon">&#128226;</span> Blog Management</a></li>
+                <li><a href="gallery-management.html" class="active"><span class="icon">&#127748;</span> Gallery Management</a></li>
+                <li><a href="notifications_center.html"><span class="icon">&#128276;</span> Notifications Center</a></li>
+                <li><a href="settings.html"><span class="icon">&#9881;</span> Settings</a></li>
+                <li><a href="../public/login.html" class="logout-link"><span class="icon">&#128682;</span> Logout</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <p>&copy; 2023 RAN Ogun</p>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header class="header">
+        <button class="sidebar-toggle-button" id="sidebarToggle">&#9776;</button>
+            <div class="header-title">
+                <h1>Gallery Management</h1>
+                <p>Add, edit, and delete gallery images.</p>
+            </div>
+            <div class="header-user-info">
+                <img src="../assets/images/new8.jpg" alt="Admin Avatar" class="admin-avatar">
+                <span>Admin Name</span>
+            </div>
+        </header>
+
+        <main class="content-area">
+            <div class="toolbar">
+                <button class="btn btn-primary" id="uploadImageBtn" data-toggle="modal" data-target="#uploadModal">
+                    <span class="icon">&#10010;</span> Upload New Image
+                </button>
+            </div>
+
+            <div class="card-grid-container">
+                <!-- Gallery Item Card -->
+                <div class="card">
+                    <div class="card-image-placeholder"><img src="../assets/images/new_1.jpg" alt="Gallery image"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Annual Conference 2023</h3>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-delete">Delete</a>
+                    </div>
+                </div>
+                <!-- Add more gallery cards -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Upload Image -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Upload New Image</h4>
+                    <button type="button" class="close-button" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="uploadImageForm">
+                        <div class="form-group">
+                            <label for="imageTitle">Image Title/Caption</label>
+                            <input type="text" id="imageTitle" name="imageTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="imageFile">Image File</label>
+                            <input type="file" id="imageFile" name="imageFile" accept="image/*" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" form="uploadImageForm" class="btn btn-primary">Upload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

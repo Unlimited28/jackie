@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Exams - Royal Ambassadors</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="../assets/images/logo.png" alt="RAN Logo" class="sidebar-logo">
+            <h3>Ambassador</h3>
+            <p>Royal Ambassadors NG</p>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="dashboard.html"><span class="icon">&#128200;</span> Dashboard</a></li>
+                <li><a href="my_exams.html" class="active"><span class="icon">&#128221;</span> My Exams</a></li>
+                <li><a href="my_results.html"><span class="icon">&#128211;</span> My Results</a></li>
+                <li><a href="camp_registration.html"><span class="icon">&#127957;</span> Camp Registration</a></li>
+                <li><a href="payments.html"><span class="icon">&#128179;</span> Payments</a></li>
+                <li><a href="profile_settings.html"><span class="icon">&#9881;</span> Profile Settings</a></li>
+                <li><a href="../public/blog.html"><span class="icon">&#128226;</span> Blog</a></li>
+                <li><a href="../public/contact.html"><span class="icon">&#128222;</span> Support</a></li>
+                <li><a href="../public/login.html" class="logout-link"><span class="icon">&#128682;</span> Logout</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <p>&copy; 2023 RAN Ogun</p>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header class="header">
+        <button class="sidebar-toggle-button" id="sidebarToggle">&#9776;</button>
+            <div class="header-title">
+                <h1>My Exams</h1>
+                <p>View available exams and your progress.</p>
+            </div>
+            <div class="header-user-info">
+                <img src="../assets/images/director.jpg" alt="User Avatar" class="admin-avatar">
+                <span>Ambassador Name</span>
+            </div>
+        </header>
+
+        <main class="content-area">
+            <div class="card-grid-container">
+                <!-- Exam Card Example 1 -->
+                <div class="card exam-card">
+                    <div class="card-content">
+                        <div class="exam-status status-active">Available</div>
+                        <h3 class="card-title">Stage 2 Advancement Exam</h3>
+                        <p class="card-meta">Questions: 50 | Duration: 60 mins</p>
+                        <p class="card-description">
+                            This exam covers the intermediate knowledge for Stage 2 candidates.
+                        </p>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-primary">Take Exam</a>
+                    </div>
+                </div>
+
+                <!-- Exam Card Example 2 -->
+                <div class="card exam-card">
+                    <div class="card-content">
+                        <div class="exam-status status-inactive">Completed</div>
+                        <h3 class="card-title">Stage 1 Advancement Exam</h3>
+                        <p class="card-meta">Completed on: 2023-05-10</p>
+                        <p class="card-description">
+                            You have already completed this exam.
+                        </p>
+                    </div>
+                    <div class="card-actions">
+                        <a href="my_results.html" class="btn btn-secondary">View Result</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
