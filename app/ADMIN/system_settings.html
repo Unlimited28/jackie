@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Settings - Royal Ambassadors</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="../assets/images/logo.png" alt="RAN Logo" class="sidebar-logo">
+            <h3>Admin Panel</h3>
+            <p>Royal Ambassadors NG</p>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="dashboard.html"><span class="icon">&#128200;</span> Dashboard</a></li>
+                <li><a href="user-management.html"><span class="icon">&#128101;</span> User Management</a></li>
+                <li><a href="exam-management.html"><span class="icon">&#128221;</span> Exam Management</a></li>
+                <li><a href="finance_dashboard.html"><span class="icon">&#128179;</span> Finance Dashboard</a></li>
+                <li><a href="system_settings.html" class="active"><span class="icon">&#9881;</span> System Settings</a></li>
+                <li><a href="blog-management.html"><span class="icon">&#128226;</span> Blog Management</a></li>
+                <li><a href="gallery-management.html"><span class="icon">&#127748;</span> Gallery Management</a></li>
+                <li><a href="notifications_center.html"><span class="icon">&#128276;</span> Notifications Center</a></li>
+                <li><a href="../public/login.html" class="logout-link"><span class="icon">&#128682;</span> Logout</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <p>&copy; 2023 RAN Ogun</p>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header class="header">
+            <div class="header-title">
+                <h1>System Settings</h1>
+                <p>Manage global settings for the portal.</p>
+            </div>
+            <div class="header-user-info">
+                <img src="../assets/images/new8.jpg" alt="Admin Avatar" class="admin-avatar">
+                <span>Admin Name</span>
+            </div>
+        </header>
+
+        <main class="content-area">
+            <div class="form-container">
+                <form id="systemSettingsForm">
+                    <div class="form-group">
+                        <label for="siteName">Site Name</label>
+                        <input type="text" id="siteName" name="siteName" value="Royal Ambassadors - Ogun Baptist Conference">
+                    </div>
+                    <div class="form-group">
+                        <label for="adminEmail">Admin Email</label>
+                        <input type="email" id="adminEmail" name="adminEmail" value="admin@raogun.org">
+                    </div>
+                    <div class="form-group">
+                        <label for="campRegistrationStatus">Camp Registration</label>
+                        <select id="campRegistrationStatus" name="campRegistrationStatus">
+                            <option value="open">Open</option>
+                            <option value="closed">Closed</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-button">Save Settings</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

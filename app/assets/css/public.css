@@ -226,6 +226,51 @@ body.public-page {
     margin-bottom: 1rem;
 }
 
+/* Auth Page Tabs */
+.auth-tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1.5rem;
+}
+
+.tab-link {
+    background: none;
+    border: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #999;
+    position: relative;
+    top: 1px;
+}
+
+.tab-link.active {
+    color: #001f54;
+    border-bottom: 3px solid #001f54;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Single Blog Post */
+.blog-post {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.post-featured-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
 /* Blog Page */
 .blog-toolbar {
     display: flex;
