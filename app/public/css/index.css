@@ -1,0 +1,143 @@
+/* Common Public Page Styles */
+body {
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Public Header */
+.public-header {
+    background-color: #001F54;
+    color: #FFFFFF;
+    padding: 1rem 0;
+    border-bottom: 3px solid #FFD700;
+}
+
+.public-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.public-header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.public-header .logo img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.public-header .logo-text h1 {
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.public-header .logo-text h3 {
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+.public-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.public-nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.public-nav a:hover,
+.public-nav a.active {
+    color: #FFD700;
+}
+
+.header-actions .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.header-actions .btn-login {
+    background-color: transparent;
+    border: 1px solid #FFD700;
+    color: #FFD700;
+}
+
+.header-actions .btn-login:hover {
+    background-color: #FFD700;
+    color: #001F54;
+}
+
+.header-actions .btn-signup {
+    background-color: #FFD700;
+    color: #001F54;
+    border: 1px solid #FFD700;
+    margin-left: 0.5rem;
+}
+
+/* Public Footer */
+.public-footer {
+    background-color: #001F54;
+    color: #FFFFFF;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.public-footer .footer-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Index Page Specific Styles */
+.hero-section {
+    background-color: #001f54;
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-content h2 span {
+    color: #FFD700;
+}
+
+.welcome-section .container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.welcome-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #FFD700;
+}

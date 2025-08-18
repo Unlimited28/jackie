@@ -1,0 +1,66 @@
+/* Common Dashboard Styles */
+body {
+    background-color: #f4f7fc;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: #001F54;
+    color: #FFFFFF;
+    position: fixed;
+    height: 100%;
+}
+
+.main-content {
+    margin-left: 260px;
+    flex: 1;
+}
+
+.header {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-user-info {
+    display: flex;
+    align-items: center;
+}
+
+.admin-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+.user-details {
+    text-align: right;
+}
+
+.user-name {
+    font-weight: bold;
+    display: block;
+}
+
+/* Page-specific styles */
+.stats-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+/* Page-specific styles for profile_settings */
