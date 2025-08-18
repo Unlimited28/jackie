@@ -98,4 +98,48 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Auth page tabs
+    const tabs = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = document.querySelector(tab.dataset.target);
+
+            tabContents.forEach(tc => {
+                tc.classList.remove('active');
+            });
+            target.classList.add('active');
+
+            tabs.forEach(t => {
+                t.classList.remove('active');
+            });
+            tab.classList.add('active');
+        });
+    });
+
+    // Check for URL params to set active tab
+    const urlParams = new URLSearchParams(window.location.search);
+    const tabParam = urlParams.get('tab');
+    if (tabParam) {
+        // We need to find the button that targets the tab, not the tab itself
+        const tabToActivate = document.querySelector(`.tab-link[data-target="#${tabParam}"]`);
+        if (tabToActivate) {
+            tabToActivate.click();
+        }
+    }
+
+    // Exam Timer
+    const timerElement = document.getElementById('timer');
+    if (timerElement) {
+        let time = 60 * 60; // 60 minutes
+        setInterval(() => {
+            const minutes = Math.floor(time / 60);
+            let seconds = time % 60;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            timerElement.textContent = `${minutes}:${seconds}`;
+            time--;
+        }, 1000);
+    }
 });
