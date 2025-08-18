@@ -1,0 +1,47 @@
+/* Common Dashboard Styles */
+body {
+    background-color: #f4f7fc;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: #001F54;
+    color: #FFFFFF;
+    position: fixed;
+    height: 100%;
+}
+
+.main-content {
+    margin-left: 260px;
+    flex: 1;
+}
+
+.header {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Page-specific styles */
+.card-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.exam-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.exam-card .card-content {
+    padding: 1.5rem;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Royal Ambassadors</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-card">
+            <div class="register-header">
+                <img src="../assets/images/logo.png" alt="Logo">
+                <h2>Create Ambassador Account</h2>
+                <p>Join the Royal Ambassadors</p>
+            </div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="church">Church</label>
+                    <input type="text" id="church" name="church" required>
+                </div>
+                <div class="form-group">
+                    <label for="association">Association</label>
+                    <select id="association" name="association" required>
+                        <option value="">Select Association</option>
+                        <option value="association1">Association 1</option>
+                        <option value="association2">Association 2</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rank">Rank</label>
+                    <select id="rank" name="rank" required>
+                        <option value="">Select Rank</option>
+                        <option value="prospect">Prospect</option>
+                        <option value="intern">Intern</option>
+                        <option value="envoy">Envoy</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Account</button>
+                <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

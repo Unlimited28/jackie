@@ -1,0 +1,23 @@
+/* Common Dashboard Styles */
+body {
+    background-color: #f4f7fc;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+}
+
+/* ... common styles ... */
+
+/* Page-specific styles */
+.stats-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
