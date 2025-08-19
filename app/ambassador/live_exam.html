@@ -49,6 +49,7 @@
                         <label><input type="radio" name="q1" value="a"> A. We are Ambassadors for Christ</label>
                         <label><input type="radio" name="q1" value="b"> B. Reaching the world for Christ</label>
                         <label><input type="radio" name="q1" value="c"> C. Living for Jesus</label>
+                        <label><input type="radio" name="q1" value="d"> D. None of the above</label>
                     </div>
                 </div>
 
@@ -58,6 +59,7 @@
                         <label><input type="radio" name="q2" value="a"> A. Paul</label>
                         <label><input type="radio" name="q2" value="b"> B. Peter</label>
                         <label><input type="radio" name="q2" value="c"> C. John the Baptist</label>
+                        <label><input type="radio" name="q2" value="d"> D. None of the above</label>
                     </div>
                 </div>
 
@@ -66,5 +68,24 @@
         </main>
     </div>
     <script src="../assets/js/main.js"></script>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Confirm Submission</h4>
+                    <button type="button" class="close-button" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to submit? This action cannot be undone.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="confirmSubmitBtn" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

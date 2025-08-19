@@ -1,6 +1,9 @@
+@import url('../../../assets/css/tokens.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap');
+
 body {
     background-color: #f4f7fc;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,10 +17,10 @@ body {
 }
 
 .login-card {
-    background-color: #ffffff;
+    background-color: var(--bg);
     padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,31,84,0.1);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
 }
 
 .login-header {
@@ -28,15 +31,16 @@ body {
 .login-header img {
     width: 60px;
     margin-bottom: 1rem;
+    border-radius: 50%;
 }
 
 .login-header h2 {
-    color: #001F54;
+    color: var(--brand-navy);
     margin: 0;
 }
 
 .login-header p {
-    color: #666;
+    color: var(--muted);
     margin-top: 0.5rem;
 }
 
@@ -48,7 +52,7 @@ body {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: #001F54;
+    color: var(--brand-navy);
 }
 
 .form-group input,
@@ -56,7 +60,7 @@ body {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: var(--btn-radius);
     box-sizing: border-box;
 }
 
@@ -64,8 +68,8 @@ body {
     width: 100%;
     padding: 0.75rem;
     border: none;
-    border-radius: 8px;
-    background-color: #001F54;
+    border-radius: var(--btn-radius);
+    background-color: var(--brand-navy);
     color: #FFFFFF;
     font-size: 1rem;
     font-weight: 600;
@@ -83,7 +87,7 @@ body {
 }
 
 .signup-link a {
-    color: #001F54;
+    color: var(--brand-navy);
     font-weight: 600;
     text-decoration: none;
 }

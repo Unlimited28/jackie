@@ -60,11 +60,28 @@
                             <option value="envoy">Envoy</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label for="duration">Duration (minutes)</label>
+                        <input type="number" id="duration" name="duration" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="startDateTime">Start Date & Time</label>
+                        <input type="datetime-local" id="startDateTime" name="startDateTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endDateTime">End Date & Time</label>
+                        <input type="datetime-local" id="endDateTime" name="endDateTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="instructions">Instructions</label>
+                        <textarea id="instructions" name="instructions" rows="4"></textarea>
+                    </div>
                     <div id="questionsContainer">
                         <!-- Questions will be added here dynamically -->
                     </div>
                     <button type="button" id="addQuestionBtn" class="btn btn-secondary">Add Question</button>
-                    <button type="submit" class="btn btn-primary">Save Exam</button>
+                    <button type="submit" class="btn btn-secondary">Save Draft</button>
+                    <button type="submit" class="btn btn-primary">Publish Exam</button>
                 </form>
             </div>
         </main>
