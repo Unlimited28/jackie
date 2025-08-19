@@ -28,21 +28,44 @@ body {
     border-bottom: 1px solid #e0e0e0;
 }
 
+.header-user-info {
+    display: flex;
+    align-items: center;
+}
+
+.admin-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+.user-details {
+    text-align: right;
+}
+
+.user-name {
+    font-weight: bold;
+    display: block;
+}
+
 /* Page-specific styles */
-.table-container {
+.stats-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem; /* Increased gap */
+    margin-bottom: 3rem; /* Increased margin */
+}
+
+.stat-card {
     background-color: #ffffff;
-    padding: 2rem;
+    padding: 2rem; /* Increased padding */
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 24px rgba(0,31,84,0.1); /* Enhanced shadow */
 }
 
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.data-table th, .data-table td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #e0e0e0;
+.notifications-section h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    color: #001F54;
 }
