@@ -33,6 +33,7 @@ body {
 .public-header .logo img {
     height: 50px;
     margin-right: 15px;
+    border-radius: 50%;
 }
 
 .public-header .logo-text h1 {
@@ -114,7 +115,17 @@ body {
     background-color: #001f54;
     color: white;
     text-align: center;
-    padding: 4rem 1rem;
+    padding: 6rem 1rem; /* Increased padding */
+}
+
+.hero-content h2 {
+    font-size: 3rem; /* Increased font size */
+    font-weight: 800; /* Bolder */
+    margin-bottom: 1.5rem;
+}
+
+.welcome-section .container {
+    padding: 4rem 0; /* Increased padding */
 }
 
 .hero-content h2 {
