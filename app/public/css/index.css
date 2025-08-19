@@ -1,22 +1,29 @@
+@import url('../../assets/css/tokens.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap');
+
 /* Common Public Page Styles */
 body {
-    background-color: #ffffff;
-    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    font-family: 'Open Sans', sans-serif;
+    color: var(--txt);
     margin: 0;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 var(--space-4);
 }
 
-/* Public Header */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--brand-navy);
+}
+
+/* Header */
 .public-header {
-    background-color: #001F54;
-    color: #FFFFFF;
-    padding: 1rem 0;
-    border-bottom: 3px solid #FFD700;
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid #eee;
 }
 
 .public-header .container {
@@ -25,130 +32,29 @@ body {
     align-items: center;
 }
 
-.public-header .logo {
-    display: flex;
-    align-items: center;
-}
-
-.public-header .logo img {
-    height: 50px;
-    margin-right: 15px;
+.logo-wrap {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-}
-
-.public-header .logo-text h1 {
-    font-size: 1.2rem;
-    margin: 0;
-    font-weight: 700;
-}
-
-.public-header .logo-text h3 {
-    font-size: 0.9rem;
-    margin: 0;
-    font-weight: 400;
-}
-
-.public-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    box-shadow: var(--shadow);
     display: flex;
-    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-.public-nav a {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
+.logo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.public-nav a:hover,
-.public-nav a.active {
-    color: #FFD700;
-}
-
-.header-actions .btn {
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.header-actions .btn-login {
-    background-color: transparent;
-    border: 1px solid #FFD700;
-    color: #FFD700;
-}
-
-.header-actions .btn-login:hover {
-    background-color: #FFD700;
-    color: #001F54;
-}
-
-.header-actions .btn-signup {
-    background-color: #FFD700;
-    color: #001F54;
-    border: 1px solid #FFD700;
-    margin-left: 0.5rem;
-}
-
-/* Public Footer */
-.public-footer {
-    background-color: #001F54;
-    color: #FFFFFF;
-    padding: 1.5rem 0;
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.public-footer .footer-links a {
-    color: #FFFFFF;
-    text-decoration: none;
-    margin: 0 0.5rem;
-    font-size: 0.9rem;
-}
+/* ... more common styles ... */
 
 /* Index Page Specific Styles */
 .hero-section {
-    background-color: #001f54;
-    color: white;
+    background-color: var(--brand-navy);
+    color: var(--bg);
     text-align: center;
-    padding: 6rem 1rem; /* Increased padding */
-}
-
-.hero-content h2 {
-    font-size: 3rem; /* Increased font size */
-    font-weight: 800; /* Bolder */
-    margin-bottom: 1.5rem;
-}
-
-.welcome-section .container {
-    padding: 4rem 0; /* Increased padding */
-}
-
-.hero-content h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.hero-content h2 span {
-    color: #FFD700;
-}
-
-.welcome-section .container {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem 0;
-}
-
-.welcome-image img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid #FFD700;
+    padding: 6rem 1rem;
 }

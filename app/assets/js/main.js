@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const questionBlock = document.createElement('div');
             questionBlock.classList.add('question-block');
             questionBlock.innerHTML = `
-                <h4>Question ${questionCount}</h4>
+                <h4>Question ${questionCount} <button type="button" class="remove-question-btn">Remove</button></h4>
                 <div class="form-group">
                     <label for="question${questionCount}">Question Text</label>
                     <input type="text" id="question${questionCount}" name="question${questionCount}" required>
@@ -173,9 +173,37 @@ document.addEventListener('DOMContentLoaded', function() {
                         <input type="radio" name="correctAnswer${questionCount}" value="c" required>
                         <input type="text" name="option${questionCount}c" placeholder="Option C" required>
                     </div>
+                    <div class="option-group">
+                        <input type="radio" name="correctAnswer${questionCount}" value="d" required>
+                        <input type="text" name="option${questionCount}d" placeholder="Option D" required>
+                    </div>
                 </div>
             `;
             questionsContainer.appendChild(questionBlock);
-        }, 1000);
+
+            questionBlock.querySelector('.remove-question-btn').addEventListener('click', function() {
+                this.closest('.question-block').remove();
+            });
+        });
+    }
+
+    // Exam submission
+    const examForm = document.getElementById('examForm');
+    if (examForm) {
+        const confirmSubmitBtn = document.getElementById('confirmSubmitBtn');
+        const confirmationModal = document.getElementById('confirmationModal');
+
+        examForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            confirmationModal.style.display = 'block';
+        });
+
+        if (confirmSubmitBtn) {
+            confirmSubmitBtn.addEventListener('click', function() {
+                // In a real app, you'd submit the form data here
+                alert('Exam submitted successfully!');
+                window.location.replace('dashboard.html');
+            });
+        }
     }
 });
