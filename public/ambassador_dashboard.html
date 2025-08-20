@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambassador Dashboard - Royal Ambassadors Portal</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        .stat-card-sm {
+            background: var(--panel-2);
+            border-radius: var(--radius);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .stat-card-sm .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 1.5rem;
+        }
+        .stat-card-sm .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .stat-card-sm .label {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        .table-container {
+            background: var(--panel-2);
+            border-radius: var(--radius);
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,.07);
+        }
+        .table-container h3 {
+            margin-bottom: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+        th {
+            font-weight: 600;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .status {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        .status-approved { background-color: rgba(66, 211, 146, 0.1); color: var(--success); }
+        .status-pending { background-color: rgba(214, 183, 91, 0.1); color: var(--gold); }
+        .status-taken { background-color: rgba(25, 140, 255, 0.1); color: var(--accent-1); }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <div class="logo">RA</div>
+            <div class="title">Ambassador Portal</div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active">
+                <i class="ri-dashboard-line"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-user-line"></i>
+                <span>My Profile</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-file-list-3-line"></i>
+                <span>Exams</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-trophy-line"></i>
+                <span>Results</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-notification-3-line"></i>
+                <span>Notifications</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-gallery-line"></i>
+                <span>Gallery</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-newspaper-line"></i>
+                <span>Blog</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-information-line"></i>
+                <span>About</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-question-line"></i>
+                <span>Support</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="index.html" class="nav-item">
+                <i class="ri-logout-circle-r-line"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header class="main-header">
+            <div class="header-left">
+                <button class="menu-toggle"><i class="ri-menu-line"></i></button>
+                <h2>Dashboard</h2>
+            </div>
+            <div class="header-right">
+                <button class="notification-btn">
+                    <i class="ri-notification-3-line"></i>
+                    <span class="badge">3</span>
+                </button>
+                <div class="profile-dropdown">
+                    <img src="https://i.pravatar.cc/40?u=ambassador" alt="User" class="profile-img">
+                    <div class="profile-info">
+                        <span class="profile-name">Balogun Ajibola</span>
+                        <span class="profile-role">Envoy</span>
+                    </div>
+                    <i class="ri-arrow-down-s-line"></i>
+                </div>
+            </div>
+        </header>
+
+        <main class="content-area">
+            <div class="content-card" style="margin-bottom: 24px;">
+                <h3>Welcome, Amb. Balogun!</h3>
+                <p style="color: var(--muted); max-width: 700px;">Here is your summary. Your unique ID is <strong style="color:var(--gold)">ogbc//ra//6254</strong>. Continue your great work and prepare for the upcoming exams.</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="stat-card-sm">
+                    <div class="icon" style="background-color: rgba(25, 140, 255, 0.15); color: var(--accent-1);"><i class="ri-file-list-3-line"></i></div>
+                    <div>
+                        <div class="value">2</div>
+                        <div class="label">Pending Exams</div>
+                    </div>
+                </div>
+                <div class="stat-card-sm">
+                    <div class="icon" style="background-color: rgba(214, 183, 91, 0.15); color: var(--gold);"><i class="ri-trophy-line"></i></div>
+                    <div>
+                        <div class="value">85%</div>
+                        <div class="label">Avg. Score</div>
+                    </div>
+                </div>
+                <div class="stat-card-sm">
+                    <div class="icon" style="background-color: rgba(66, 211, 146, 0.15); color: var(--success);"><i class="ri-shield-star-line"></i></div>
+                    <div>
+                        <div class="value">Envoy</div>
+                        <div class="label">Current Rank</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <h3>Upcoming & Available Exams</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Exam Title</th>
+                            <th>Rank</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Senior Envoy Promotion Exam</td>
+                            <td>Senior Envoy</td>
+                            <td><span class="status status-approved">Available</span></td>
+                            <td><a href="#" class="btn btn-primary" style="padding: 8px 16px;">Take Exam</a></td>
+                        </tr>
+                        <tr>
+                            <td>Annual Bible Quiz</td>
+                            <td>All Ranks</td>
+                            <td><span class="status status-approved">Available</span></td>
+                            <td><a href="#" class="btn btn-primary" style="padding: 8px 16px;">Take Exam</a></td>
+                        </tr>
+                        <tr>
+                            <td>Special Envoy Test</td>
+                            <td>Special Envoy</td>
+                            <td><span class="status status-pending">Pending Approval</span></td>
+                            <td><a href="#" class="btn btn-secondary" style="padding: 8px 16px; cursor: not-allowed;">Waiting</a></td>
+                        </tr>
+                         <tr>
+                            <td>Intern Comprehensive Test</td>
+                            <td>Intern</td>
+                            <td><span class="status status-taken">Taken</span></td>
+                            <td><a href="#" class="btn btn-secondary" style="padding: 8px 16px;">View Result</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
