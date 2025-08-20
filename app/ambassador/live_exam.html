@@ -4,88 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Exam - Royal Ambassadors</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Google Fonts & Remix Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Theme & Dashboard CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+
+    <style>
+        .exam-card {
+            background-color: var(--panel);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: var(--radius);
+            padding: 32px;
+        }
+        .exam-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+        .exam-timer {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--danger);
+        }
+        .question-meta {
+            font-weight: 600;
+            color: var(--muted);
+        }
+        .question-text {
+            font-size: 1.2rem;
+            margin: 24px 0;
+            line-height: 1.6;
+        }
+        .options-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .options-list li label {
+            display: block;
+            padding: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .options-list li label:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent-2);
+        }
+        .options-list li input[type="radio"] {
+            display: none;
+        }
+        .options-list li input[type="radio"]:checked + label {
+            background-color: var(--accent-1);
+            border-color: var(--accent-2);
+            color: white;
+            box-shadow: var(--glow);
+        }
+        .exam-navigation {
+            margin-top: 32px;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
 </head>
 <body>
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <img src="../assets/images/logo.png" alt="RAN Logo" class="sidebar-logo">
-            <h3>Ambassador</h3>
-            <p>Royal Ambassadors NG</p>
-        </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="dashboard.html"><span class="icon">&#128200;</span> Dashboard</a></li>
-                <li><a href="my_exams.html" class="active"><span class="icon">&#128221;</span> My Exams</a></li>
-                <li><a href="my_results.html"><span class="icon">&#128211;</span> My Results</a></li>
-                <li><a href="profile_settings.html"><span class="icon">&#9881;</span> Profile Settings</a></li>
-                <li><a href="../public/blog.html"><span class="icon">&#128226;</span> Blog</a></li>
-                <li><a href="../public/contact.html"><span class="icon">&#128222;</span> Support</a></li>
-                <li><a href="../public/login.html" class="logout-link"><span class="icon">&#128682;</span> Logout</a></li>
-            </ul>
-        </nav>
-        <div class="sidebar-footer">
-            <p>&copy; 2023 RAN Ogun</p>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <header class="header">
-            <div class="header-title">
-                <h1>Stage 2 Advancement Exam</h1>
-                <p>Time Remaining: <span id="timer">60:00</span></p>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">RA</div>
+                <div class="title">Ambassador Portal</div>
             </div>
-            <div class="header-user-info">
-                <img src="../assets/images/director.jpg" alt="User Avatar" class="admin-avatar">
-                <span>Ambassador Name</span>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html"><i class="ri-dashboard-line"></i> Dashboard</a>
+                <a href="my_exams.html" class="active"><i class="ri-file-list-3-line"></i> My Exams</a>
+                <a href="my_results.html"><i class="ri-trophy-line"></i> My Results</a>
+                <a href="profile_settings.html"><i class="ri-user-settings-line"></i> Profile Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="../forms/logout.php"><i class="ri-logout-box-r-line"></i> Logout</a>
             </div>
-        </header>
+        </aside>
 
-        <main class="content-area">
-            <form id="examForm">
-                <div class="question-card">
-                    <h4>Question 1: What is the motto of the Royal Ambassadors?</h4>
-                    <div class="options">
-                        <label><input type="radio" name="q1" value="a"> A. We are Ambassadors for Christ</label>
-                        <label><input type="radio" name="q1" value="b"> B. Reaching the world for Christ</label>
-                        <label><input type="radio" name="q1" value="c"> C. Living for Jesus</label>
-                        <label><input type="radio" name="q1" value="d"> D. None of the above</label>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="menu-toggle"><i class="ri-menu-2-line"></i></button>
+                    <h1 class="page-title">Exam: The Life of Paul</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../assets/images/team-1.jpg" alt="User Avatar">
                     </div>
                 </div>
+            </header>
 
-                <div class="question-card">
-                    <h4>Question 2: Who was the first Royal Ambassador?</h4>
-                    <div class="options">
-                        <label><input type="radio" name="q2" value="a"> A. Paul</label>
-                        <label><input type="radio" name="q2" value="b"> B. Peter</label>
-                        <label><input type="radio" name="q2" value="c"> C. John the Baptist</label>
-                        <label><input type="radio" name="q2" value="d"> D. None of the above</label>
+            <!-- Content Wrapper -->
+            <div class="content-wrapper">
+                <div class="exam-card">
+                    <div class="exam-header">
+                        <div class="question-meta">Question 1 of 30</div>
+                        <div class="exam-timer"><i class="ri-time-line"></i> 29:45</div>
+                    </div>
+
+                    <div class="question-body">
+                        <p class="question-text">
+                            Before his conversion, the Apostle Paul was known by what name?
+                        </p>
+                        <ul class="options-list">
+                            <li>
+                                <input type="radio" id="optionA" name="question1" value="A">
+                                <label for="optionA">A) Peter</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="optionB" name="question1" value="B">
+                                <label for="optionB">B) Saul of Tarsus</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="optionC" name="question1" value="C">
+                                <label for="optionC">C) John the Baptist</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="optionD" name="question1" value="D">
+                                <label for="optionD">D) Barnabas</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="exam-navigation">
+                        <button class="btn btn-secondary">Previous</button>
+                        <button class="btn btn-primary">Next</button>
+                        <button class="btn btn-gold">Submit Exam</button>
                     </div>
                 </div>
-
-                <button type="submit" class="btn btn-primary form-button">Submit Exam</button>
-            </form>
+            </div>
         </main>
     </div>
-    <script src="../assets/js/main.js"></script>
-
-    <!-- Confirmation Modal -->
-    <div id="confirmationModal" class="modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Confirm Submission</h4>
-                    <button type="button" class="close-button" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure you want to submit? This action cannot be undone.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="button" id="confirmSubmitBtn" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <script src="../assets/js/dashboard.js"></script>
 </body>
 </html>

@@ -3,87 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camp Files - Royal Ambassadors</title>
-    <link rel="stylesheet" href="css/camp_files.css">
+    <title>Camp Files - Super Admin</title>
+
+    <!-- Google Fonts & Remix Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Theme & Dashboard CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
 <body>
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <img src="../assets/images/logo.png" alt="RAN Logo" class="sidebar-logo">
-            <h3>Admin Panel</h3>
-            <p>Royal Ambassadors NG</p>
-        </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="dashboard.html"><span class="icon">&#128200;</span> Dashboard</a></li>
-                <li><a href="user-management.html"><span class="icon">&#128101;</span> User Management</a></li>
-                <li><a href="exam-management.html"><span class="icon">&#128221;</span> Exam Management</a></li>
-                <li><a href="finance_dashboard.html"><span class="icon">&#128179;</span> Finance Dashboard</a></li>
-                <li><a href="camp_files.html" class="active"><span class="icon">&#128228;</span> Camp Files</a></li>
-                <li><a href="blog-management.html"><span class="icon">&#128226;</span> Blog Management</a></li>
-                <li><a href="gallery-management.html"><span class="icon">&#127748;</span> Gallery Management</a></li>
-                <li><a href="notifications_center.html"><span class="icon">&#128276;</span> Notifications Center</a></li>
-                <li><a href="settings.html"><span class="icon">&#9881;</span> Settings</a></li>
-                <li><a href="../public/login.html" class="logout-link"><span class="icon">&#128682;</span> Logout</a></li>
-            </ul>
-        </nav>
-        <div class="sidebar-footer">
-            <p>&copy; 2023 RAN Ogun</p>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <header class="header">
-            <div class="header-title">
-                <h1>Camp Registration Files</h1>
-                <p>Review and approve camp registration files.</p>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">RA</div>
+                <div class="title">Super Admin</div>
             </div>
-            <div class="header-user-info">
-                <img src="../assets/images/new8.jpg" alt="Admin Avatar" class="admin-avatar">
-                <span>Admin Name</span>
-            </div>
-        </header>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html"><i class="ri-dashboard-line"></i> Dashboard</a>
 
-        <main class="content-area">
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Association</th>
-                            <th>Camp Name</th>
-                            <th>File Name</th>
-                            <th>Upload Date</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Association A</td>
-                            <td>Annual Leadership Camp 2023</td>
-                            <td>association_a_regs.xlsx</td>
-                            <td>2023-10-01</td>
-                            <td><span class="status status-pending">Pending Review</span></td>
-                            <td class="action-buttons">
-                                <button class="btn btn-primary">Download</button>
-                                <button class="btn btn-success">Approve</button>
-                            </td>
-                        </tr>
-                         <tr>
-                            <td>Association B</td>
-                            <td>Annual Leadership Camp 2023</td>
-                            <td>association_b_regs.xlsx</td>
-                            <td>2023-09-28</td>
-                            <td><span class="status status-active">Approved</span></td>
-                            <td class="action-buttons">
-                                <button class="btn btn-primary">Download</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="nav-title">User Management</div>
+                <a href="user-management.html"><i class="ri-team-line"></i> Manage Users</a>
+                <a href="finance_dashboard.html"><i class="ri-bank-card-line"></i> Finance Dashboard</a>
+                <a href="voucher-management.html"><i class="ri-coupon-3-line"></i> Voucher Management</a>
+                <a href="camp_files.html" class="active"><i class="ri-file-excel-2-line"></i> Camp Files</a>
+
+                <div class="nav-title">Content</div>
+                <a href="exam-management.html"><i class="ri-file-list-3-line"></i> Exam Management</a>
+                <a href="blog-management.html"><i class="ri-article-line"></i> Blog Management</a>
+                <a href="gallery-management.html"><i class="ri-gallery-line"></i> Gallery Management</a>
+
+                <div class="nav-title">Marketing</div>
+                <a href="ads-management.html"><i class="ri-advertisement-line"></i> Ads Management</a>
+
+                <div class="nav-title">System</div>
+                <a href="notification-management.html"><i class="ri-notification-3-line"></i> Notifications</a>
+                <a href="system_settings.html"><i class="ri-settings-3-line"></i> System Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="logout.html"><i class="ri-logout-box-r-line"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <h1 class="page-title">Camp Registration Files</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../assets/images/pro.jpg" alt="User Avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Wrapper -->
+            <div class="content-wrapper">
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h3>Uploaded Files from All Associations</h3>
+                    </div>
+                    <div class="dash-card-content">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Association</th>
+                                    <th>File Name</th>
+                                    <th>Upload Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Agape Association</td>
+                                    <td>agape_camp_2025.xlsx</td>
+                                    <td>2025-08-15</td>
+                                    <td><span class="status status-approved">Processed</span></td>
+                                    <td><a href="#" class="btn btn-secondary btn-sm">Download</a></td>
+                                </tr>
+                                 <tr>
+                                    <td>Bethel Association</td>
+                                    <td>bethel_camp_reg.xlsx</td>
+                                    <td>2025-08-14</td>
+                                    <td><span class="status status-pending">Pending</span></td>
+                                    <td><a href="#" class="btn btn-secondary btn-sm">Download</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
-    <script src="../assets/js/main.js"></script>
 </body>
 </html>

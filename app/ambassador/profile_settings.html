@@ -4,90 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Settings - Royal Ambassadors</title>
-    <link rel="stylesheet" href="css/profile_settings.css">
+
+    <!-- Google Fonts & Remix Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Theme & Dashboard CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
 <body>
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <img src="../assets/images/logo.png" alt="RAN Logo" class="sidebar-logo">
-            <h3>Ambassador</h3>
-            <p>Royal Ambassadors NG</p>
-        </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="dashboard.html"><span class="icon">&#128200;</span> Dashboard</a></li>
-                <li><a href="my_exams.html"><span class="icon">&#128221;</span> My Exams</a></li>
-                <li><a href="my_results.html"><span class="icon">&#128211;</span> My Results</a></li>
-                <li><a href="profile_settings.html" class="active"><span class="icon">&#9881;</span> Profile Settings</a></li>
-                <li><a href="../public/blog.html"><span class="icon">&#128226;</span> Blog</a></li>
-                <li><a href="../public/contact.html"><span class="icon">&#128222;</span> Support</a></li>
-                <li><a href="../public/login.html" class="logout-link"><span class="icon">&#128682;</span> Logout</a></li>
-            </ul>
-        </nav>
-        <div class="sidebar-footer">
-            <p>&copy; 2023 RAN Ogun</p>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <header class="header">
-        <button class="sidebar-toggle-button" id="sidebarToggle">&#9776;</button>
-            <div class="header-title">
-                <h1>Profile Settings</h1>
-                <p>Update your personal information.</p>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">RA</div>
+                <div class="title">Ambassador Portal</div>
             </div>
-            <div class="header-user-info">
-                <img src="../assets/images/director.jpg" alt="User Avatar" class="admin-avatar">
-                <span>Ambassador Name</span>
-            </div>
-        </header>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html"><i class="ri-dashboard-line"></i> Dashboard</a>
+                <a href="my_exams.html"><i class="ri-file-list-3-line"></i> My Exams</a>
+                <a href="my_results.html"><i class="ri-trophy-line"></i> My Results</a>
+                <a href="profile_settings.html" class="active"><i class="ri-user-settings-line"></i> Profile Settings</a>
 
-        <main class="content-area">
-            <div class="form-container">
-                <form id="profileSettingsForm">
-                    <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" name="fullName" value="Ambassador Name">
+                <div class="nav-title">Resources</div>
+                <a href="../public/gallery.html"><i class="ri-gallery-line"></i> Gallery</a>
+                <a href="../public/blog.html"><i class="ri-article-line"></i> Blog</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="../forms/logout.php"><i class="ri-logout-box-r-line"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="menu-toggle"><i class="ri-menu-2-line"></i></button>
+                    <h1 class="page-title">Profile Settings</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../assets/images/team-1.jpg" alt="User Avatar">
+                        <div class="user-info">
+                            <span class="user-name">Amb. John Doe</span>
+                            <span class="user-role">Envoy</span>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" value="ambassador@example.com">
+                </div>
+            </header>
+
+            <!-- Content Wrapper -->
+            <div class="content-wrapper">
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h3>Edit Your Profile Information</h3>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
+                    <div class="dash-card-content">
+                        <form class="dash-form">
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" id="fullname" class="form-control" value="Amb. John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" value="john.doe@example.com" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" value="+234 801 234 5678">
+                            </div>
+                            <div class="form-group">
+                                <label for="church">Church</label>
+                                <input type="text" id="church" class="form-control" value="First Baptist Church">
+                            </div>
+                            <hr style="border-color: rgba(255,255,255,.1); margin: 24px 0;">
+                            <h4>Change Password</h4>
+                            <div class="form-group">
+                                <label for="current_password">Current Password</label>
+                                <input type="password" id="current_password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="new_password">New Password</label>
+                                <input type="password" id="new_password" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="association">Association</label>
-                        <input type="text" id="association" name="association" value="Your Association" disabled>
-                    </div>
-                    <div class="form-group">
-                        <label for="rank">Current Rank</label>
-                        <input type="text" id="rank" name="rank" value="Envoy" disabled>
-                    </div>
-                    <div class="form-group">
-                        <label for="profilePicture">Profile Picture</label>
-                        <input type="file" id="profilePicture" name="profilePicture">
-                    </div>
-                    <hr>
-                    <h3 class="section-title">Change Password</h3>
-                    <div class="form-group">
-                        <label for="currentPassword">Current Password</label>
-                        <input type="password" id="currentPassword" name="currentPassword">
-                    </div>
-                    <div class="form-group">
-                        <label for="newPassword">New Password</label>
-                        <input type="password" id="newPassword" name="newPassword">
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmPassword">Confirm New Password</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword">
-                    </div>
-                    <button type="submit" class="btn btn-primary form-button">Save Changes</button>
-                </form>
+                </div>
             </div>
         </main>
     </div>
-    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
 </body>
 </html>

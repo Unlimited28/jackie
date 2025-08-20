@@ -5,134 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>President Dashboard - Royal Ambassadors</title>
 
+    <!-- Google Fonts & Remix Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/tokens.css">
-    <style>
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-bottom: 24px;
-        }
-        .stat-card-sm {
-            background: var(--panel-2);
-            border-radius: var(--radius);
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        .stat-card-sm .icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            font-size: 1.5rem;
-        }
-        .stat-card-sm .value {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        .stat-card-sm .label {
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-        .actions-container {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-    </style>
+
+    <!-- Theme & Dashboard CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
-<body class="dashboard-body">
-
-    <div class="sidebar">
-        <div class="sidebar-brand">
-            <img src="../assets/images/logo.png" alt="Logo" class="logo">
-            <div class="title">Admin Portal</div>
-        </div>
-
-        <nav class="sidebar-nav">
-            <a href="dashboard.html" class="nav-item active"><i class="ri-dashboard-line"></i><span>Dashboard</span></a>
-            <a href="manage_ambassadors.html" class="nav-item"><i class="ri-team-line"></i><span>Manage Ambassadors</span></a>
-            <a href="exam_approvals.html" class="nav-item"><i class="ri-user-follow-line"></i><span>Exam Approvals</span></a>
-            <a href="camp_registrations.html" class="nav-item"><i class="ri-bus-line"></i><span>Camp Registrations</span></a>
-            <a href="payments_upload.html" class="nav-item"><i class="ri-wallet-3-line"></i><span>Upload Payment</span></a>
-            <a href="notifications.html" class="nav-item"><i class="ri-notification-3-line"></i><span>Notifications</span></a>
-            <a href="profile_settings.html" class="nav-item"><i class="ri-user-settings-line"></i><span>Profile Settings</span></a>
-        </nav>
-
-        <div class="sidebar-footer">
-            <a href="../public/login.html" class="nav-item">
-                <i class="ri-logout-circle-r-line"></i>
-                <span>Logout</span>
-            </a>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <header class="main-header">
-            <div class="header-left">
-                <button class="menu-toggle"><i class="ri-menu-line"></i></button>
-                <h2>Association Dashboard</h2>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">RA</div>
+                <div class="title">President Portal</div>
             </div>
-            <div class="header-right">
-                <div class="profile-dropdown">
-                    <img src="../assets/images/pro.jpg" alt="User" class="profile-img">
-                    <div class="profile-info">
-                        <span class="profile-name">President Name</span>
-                        <span class="profile-role">Association President</span>
-                    </div>
-                    <i class="ri-arrow-down-s-line"></i>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="active"><i class="ri-dashboard-line"></i> Dashboard</a>
+                <a href="manage_ambassadors.html"><i class="ri-team-line"></i> Manage Ambassadors</a>
+                <a href="exam_approvals.html"><i class="ri-checkbox-multiple-line"></i> Exam Approvals</a>
+                <a href="camp_registrations.html"><i class="ri-quill-pen-line"></i> Camp Registrations</a>
+                <a href="payments_upload.html"><i class="ri-upload-cloud-2-line"></i> Upload Payments</a>
+                <a href="notifications.html"><i class="ri-notification-3-line"></i> Notifications</a>
+                <a href="profile_settings.html"><i class="ri-user-settings-line"></i> Profile Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="../forms/logout.php"><i class="ri-logout-box-r-line"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="menu-toggle"><i class="ri-menu-2-line"></i></button>
+                    <h1 class="page-title">Dashboard</h1>
                 </div>
-            </div>
-        </header>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../assets/images/director.jpg" alt="User Avatar">
+                        <div class="user-info">
+                            <span class="user-name">Pres. Ajibola</span>
+                            <span class="user-role">Agape Association</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
-        <main class="content-area">
-            <div class="dashboard-grid">
-                <div class="stat-card-sm">
-                    <div class="icon" style="background-color: rgba(25, 140, 255, 0.15); color: var(--accent-1);"><i class="ri-team-line"></i></div>
-                    <div>
-                        <div class="value">75</div>
+            <!-- Content Wrapper -->
+            <div class="content-wrapper">
+                <!-- Welcome Message -->
+                <div class="dash-card" style="margin-bottom: 24px;">
+                    <h2>Welcome, President Ajibola!</h2>
+                    <p>Here's an overview of your association's activities.</p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <div class="stat-card">
+                        <div class="value" style="color: var(--accent-2);">42</div>
                         <div class="label">Total Ambassadors</div>
                     </div>
-                </div>
-                <div class="stat-card-sm">
-                    <div class="icon" style="background-color: rgba(214, 183, 91, 0.15); color: var(--gold);"><i class="ri-user-follow-line"></i></div>
-                    <div>
-                        <div class="value">12</div>
+                    <div class="stat-card">
+                        <div class="value" style="color: var(--danger);">5</div>
                         <div class="label">Pending Approvals</div>
                     </div>
-                </div>
-                 <div class="stat-card-sm">
-                    <div class="icon" style="background-color: rgba(66, 211, 146, 0.15); color: var(--success);"><i class="ri-bank-card-line"></i></div>
-                    <div>
-                        <div class="value">60/75</div>
-                        <div class="label">Dues Paid</div>
+                    <div class="stat-card">
+                        <div class="value" style="color: var(--gold);">2</div>
+                        <div class="label">Pending Payments</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value" style="color: var(--success);">15</div>
+                        <div class="label">Camp Registered</div>
                     </div>
                 </div>
-                <div class="stat-card-sm">
-                    <div class="icon" style="background-color: rgba(255, 90, 122, 0.15); color: var(--danger);"><i class="ri-bus-line"></i></div>
-                    <div>
-                        <div class="value">30</div>
-                        <div class="label">Camp Registrations</div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="content-card">
-                <h3>Quick Actions</h3>
-                <div class="actions-container" style="margin-top: 16px;">
-                    <a href="manage_ambassadors.html" class="btn btn-primary"><i class="ri-team-line"></i> Manage Ambassadors</a>
-                    <a href="exam_approvals.html" class="btn btn-secondary"><i class="ri-user-follow-line"></i> Approve Exams</a>
-                    <a href="payments_upload.html" class="btn btn-gold"><i class="ri-wallet-3-line"></i> View Payments</a>
+                <!-- Recent Activity -->
+                <div class="dash-card" style="margin-top: 24px;">
+                    <div class="dash-card-header">
+                        <h3>Pending Actions</h3>
+                    </div>
+                    <div class="dash-card-content">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Ambassador Name</th>
+                                    <th>Action Required</th>
+                                    <th>Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Samuel Adekunle</td>
+                                    <td>Exam Approval Request</td>
+                                    <td>2025-08-19</td>
+                                    <td><a href="exam_approvals.html" class="btn btn-secondary btn-sm">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>David Ojo</td>
+                                    <td>New Registration</td>
+                                    <td>2025-08-18</td>
+                                    <td><a href="manage_ambassadors.html" class="btn btn-secondary btn-sm">View</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </main>
     </div>
-
-    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
 </body>
 </html>

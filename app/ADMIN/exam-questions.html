@@ -1,67 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Create Exam - Questions Builder</title>
-    <link rel="stylesheet" href="css/exam-questions.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Questions - Super Admin</title>
+
+    <!-- Google Fonts & Remix Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Theme & Dashboard CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
 <body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">RA</div>
+                <div class="title">Super Admin</div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html"><i class="ri-dashboard-line"></i> Dashboard</a>
 
-  <div class="container">
-    <header class="exam-header">
-      <img src="../assets/images/logo.png" alt="RAN Logo" class="logo"/>
-      <h1>Create Exam Questions</h1>
-      <p>Fill in your exam details and manually add your questions.</p>
-    </header>
+                <div class="nav-title">User Management</div>
+                <a href="user-management.html"><i class="ri-team-line"></i> Manage Users</a>
+                <a href="finance_dashboard.html"><i class="ri-bank-card-line"></i> Finance Dashboard</a>
+                <a href="voucher-management.html"><i class="ri-coupon-3-line"></i> Voucher Management</a>
+                <a href="camp_files.html"><i class="ri-file-excel-2-line"></i> Camp Files</a>
 
-    <section class="exam-details">
-      <h2>Exam Details</h2>
-      <form class="exam-info-form">
-        <input type="text" placeholder="Exam Title" required />
-        <textarea placeholder="Exam Description" rows="3" required></textarea>
-        <input type="number" placeholder="Duration (minutes)" min="1" required />
-      </form>
-    </section>
+                <div class="nav-title">Content</div>
+                <a href="exam-management.html" class="active"><i class="ri-file-list-3-line"></i> Exam Management</a>
+                <a href="blog-management.html"><i class="ri-article-line"></i> Blog Management</a>
+                <a href="gallery-management.html"><i class="ri-gallery-line"></i> Gallery Management</a>
 
-    <section class="question-form-section">
-      <h2>Add a Question</h2>
-      <form class="question-form">
-        <textarea placeholder="Enter question text..." rows="3" required></textarea>
+                <div class="nav-title">Marketing</div>
+                <a href="ads-management.html"><i class="ri-advertisement-line"></i> Ads Management</a>
 
-        <div class="option-group">
-          <input type="text" placeholder="Option A" required />
-          <label><input type="checkbox" name="correct"> Correct</label>
-        </div>
-        <div class="option-group">
-          <input type="text" placeholder="Option B" required />
-          <label><input type="checkbox" name="correct"> Correct</label>
-        </div>
-        <div class="option-group">
-          <input type="text" placeholder="Option C" required />
-          <label><input type="checkbox" name="correct"> Correct</label>
-        </div>
-        <div class="option-group">
-          <input type="text" placeholder="Option D" required />
-          <label><input type="checkbox" name="correct"> Correct</label>
-        </div>
+                <div class="nav-title">System</div>
+                <a href="notification-management.html"><i class="ri-notification-3-line"></i> Notifications</a>
+                <a href="system_settings.html"><i class="ri-settings-3-line"></i> System Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="logout.html"><i class="ri-logout-box-r-line"></i> Logout</a>
+            </div>
+        </aside>
 
-        <button type="submit" class="add-question-btn">➕ Add Question</button>
-      </form>
-    </section>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <h1 class="page-title">Exam Questions: The Life of Paul</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../assets/images/pro.jpg" alt="User Avatar">
+                    </div>
+                </div>
+            </header>
 
-    <section class="added-questions">
-      <h2>Preview of Added Questions</h2>
-      <div class="question-list">
-        <!-- Placeholder for JS or PHP logic -->
-        <p>No questions added yet.</p>
-      </div>
-    </section>
+            <!-- Content Wrapper -->
+            <div class="content-wrapper">
+                <!-- Add Question Card -->
+                <div class="dash-card" style="margin-bottom: 24px;">
+                    <div class="dash-card-header">
+                        <h3>Add New Question</h3>
+                    </div>
+                    <div class="dash-card-content">
+                        <form class="dash-form">
+                            <div class="form-group">
+                                <label for="question_text">Question Text</label>
+                                <textarea id="question_text" class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="option_a">Option A</label>
+                                <input type="text" id="option_a" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="option_b">Option B</label>
+                                <input type="text" id="option_b" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="option_c">Option C</label>
+                                <input type="text" id="option_c" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="option_d">Option D</label>
+                                <input type="text" id="option_d" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="correct_option">Correct Option</label>
+                                <select id="correct_option" class="form-control">
+                                    <option value="A">Option A</option>
+                                    <option value="B">Option B</option>
+                                    <option value="C">Option C</option>
+                                    <option value="D">Option D</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Question</button>
+                        </form>
+                    </div>
+                </div>
 
-    <div class="publish-btn-wrapper">
-      <button class="publish-btn">✅ Publish Exam</button>
+                <!-- Existing Questions -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h3>Existing Questions (1 of 30)</h3>
+                    </div>
+                    <div class="dash-card-content">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Correct Answer</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Before his conversion, the Apostle Paul was known by what name?</td>
+                                    <td>B</td>
+                                    <td>
+                                        <a href="#" class="btn btn-secondary btn-sm">Edit</a>
+                                        <a href="#" class="btn btn-secondary btn-sm" style="background: var(--danger); color: white;">Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
-  </div>
-
 </body>
 </html>

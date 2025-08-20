@@ -5,159 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Admin Dashboard - Royal Ambassadors</title>
 
+    <!-- Google Fonts & Remix Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/tokens.css">
-    <style>
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-            margin-bottom: 24px;
-        }
-        .stat-card-lg {
-            background: var(--panel-2);
-            border-radius: var(--radius);
-            padding: 24px;
-            border: 1px solid rgba(255,255,255,.07);
-        }
-        .stat-card-lg .header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-        .stat-card-lg .icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: grid;
-            place-items: center;
-            font-size: 1.8rem;
-        }
-        .stat-card-lg .value {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-        .stat-card-lg .label {
-            color: var(--muted);
-            font-size: 1rem;
-            font-weight: 500;
-        }
-        .action-buttons {
-            display: flex;
-            gap: 8px;
-        }
-    </style>
+
+    <!-- Theme & Dashboard CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
-<body class="dashboard-body">
-
-    <div class="sidebar">
-        <div class="sidebar-brand">
-            <img src="../assets/images/logo.png" alt="Logo" class="logo">
-            <div class="title">Super Admin</div>
-        </div>
-
-        <nav class="sidebar-nav">
-            <a href="dashboard.html" class="nav-item active"><i class="ri-dashboard-line"></i><span>Dashboard</span></a>
-            <a href="finance_dashboard.html" class="nav-item"><i class="ri-bank-card-line"></i><span>Finance</span></a>
-            <a href="user-management.html" class="nav-item"><i class="ri-team-line"></i><span>User Management</span></a>
-            <a href="exam-management.html" class="nav-item"><i class="ri-file-list-3-line"></i><span>Exam Management</span></a>
-            <a href="gallery-management.html" class="nav-item"><i class="ri-image-line"></i><span>Gallery</span></a>
-            <a href="blog-management.html" class="nav-item"><i class="ri-newspaper-line"></i><span>Blog</span></a>
-            <a href="notification-management.html" class="nav-item"><i class="ri-notification-3-line"></i><span>Notifications</span></a>
-            <a href="system_settings.html" class="nav-item"><i class="ri-settings-3-line"></i><span>System Settings</span></a>
-        </nav>
-
-        <div class="sidebar-footer">
-            <a href="../public/login.html" class="nav-item"><i class="ri-logout-circle-r-line"></i><span>Logout</span></a>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <header class="main-header">
-            <div class="header-left">
-                <button class="menu-toggle"><i class="ri-menu-line"></i></button>
-                <h2>Super Admin Dashboard</h2>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">RA</div>
+                <div class="title">Super Admin</div>
             </div>
-            <div class="header-right">
-                <div class="profile-dropdown">
-                    <img src="../assets/images/new8.jpg" alt="User" class="profile-img">
-                    <div class="profile-info">
-                        <span class="profile-name">Super Admin</span>
-                        <span class="profile-role">System Control</span>
-                    </div>
-                    <i class="ri-arrow-down-s-line"></i>
-                </div>
-            </div>
-        </header>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="active"><i class="ri-dashboard-line"></i> Dashboard</a>
 
-        <main class="content-area">
-            <div class="dashboard-grid">
-                <div class="stat-card-lg">
-                    <div class="header">
-                        <div class="icon" style="background-color: rgba(66, 211, 146, 0.15); color: var(--success);"><i class="ri-wallet-3-line"></i></div>
-                        <div class="label">Total Revenue</div>
-                    </div>
-                    <div class="value">₦ 1,250,000</div>
+                <div class="nav-title">User Management</div>
+                <a href="user-management.html"><i class="ri-team-line"></i> Manage Users</a>
+                <a href="finance_dashboard.html"><i class="ri-bank-card-line"></i> Finance Dashboard</a>
+                <a href="voucher-management.html"><i class="ri-coupon-3-line"></i> Voucher Management</a>
+                <a href="camp_files.html"><i class="ri-file-excel-2-line"></i> Camp Files</a>
+
+                <div class="nav-title">Content</div>
+                <a href="exam-management.html"><i class="ri-file-list-3-line"></i> Exam Management</a>
+                <a href="blog-management.html"><i class="ri-article-line"></i> Blog Management</a>
+                <a href="gallery-management.html"><i class="ri-gallery-line"></i> Gallery Management</a>
+
+                <div class="nav-title">Marketing</div>
+                <a href="ads-management.html"><i class="ri-advertisement-line"></i> Ads Management</a>
+
+                <div class="nav-title">System</div>
+                <a href="notification-management.html"><i class="ri-notification-3-line"></i> Notifications</a>
+                <a href="system_settings.html"><i class="ri-settings-3-line"></i> System Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="logout.html"><i class="ri-logout-box-r-line"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="menu-toggle"><i class="ri-menu-2-line"></i></button>
+                    <h1 class="page-title">System Overview</h1>
                 </div>
-                <div class="stat-card-lg">
-                    <div class="header">
-                        <div class="icon" style="background-color: rgba(214, 183, 91, 0.15); color: var(--gold);"><i class="ri-time-line"></i></div>
-                        <div class="label">Pending Payments</div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../assets/images/pro.jpg" alt="User Avatar">
+                        <div class="user-info">
+                            <span class="user-name">Super Admin</span>
+                            <span class="user-role">System Control</span>
+                        </div>
                     </div>
-                    <div class="value">12</div>
                 </div>
-                <div class="stat-card-lg">
-                    <div class="header">
-                        <div class="icon" style="background-color: rgba(25, 140, 255, 0.15); color: var(--accent-1);"><i class="ri-team-line"></i></div>
+            </header>
+
+            <!-- Content Wrapper -->
+            <div class="content-wrapper">
+                <!-- Stats Grid -->
+                <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <div class="stat-card">
+                        <div class="value" style="color: var(--accent-2);">512</div>
                         <div class="label">Total Users</div>
                     </div>
-                    <div class="value">542</div>
+                    <div class="stat-card">
+                        <div class="value" style="color: var(--success);">₦1,250,000</div>
+                        <div class="label">Total Approved Payments</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value" style="color: var(--danger);">12</div>
+                        <div class="label">Pending Approvals</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value" style="color: var(--gold);">25</div>
+                        <div class="label">Total Associations</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="table-container">
-                <div class="table-header">
-                    <h3>Pending Payment Approvals</h3>
+                <!-- Recent Activity -->
+                <div class="dash-card" style="margin-top: 24px;">
+                    <div class="dash-card-header">
+                        <h3>Recent System Activity</h3>
+                    </div>
+                    <div class="dash-card-content">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Action</th>
+                                    <th>Details</th>
+                                    <th>Timestamp</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Pres. Ajibola</td>
+                                    <td>Payment Upload</td>
+                                    <td>Uploaded receipt for Camp Fees</td>
+                                    <td>2025-08-20 10:30 AM</td>
+                                </tr>
+                                <tr>
+                                    <td>Amb. John Doe</td>
+                                    <td>Exam Taken</td>
+                                    <td>Completed "Old Testament Survey"</td>
+                                    <td>2025-08-20 09:15 AM</td>
+                                </tr>
+                                <tr>
+                                    <td>Pres. Adeoye</td>
+                                    <td>Exam Approval</td>
+                                    <td>Approved 3 ambassadors for exams</td>
+                                    <td>2025-08-19 04:00 PM</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Association</th>
-                            <th>Amount</th>
-                            <th>Purpose</th>
-                            <th>Receipt</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Agape Baptist Association</td>
-                            <td>₦ 50,000</td>
-                            <td>Camp Fees</td>
-                            <td><a href="#" class="btn btn-secondary" style="padding: 6px 12px;"><i class="ri-download-2-line"></i> View</a></td>
-                            <td class="action-buttons">
-                                <a href="#" class="btn" style="background:var(--success); color: white; padding: 6px 12px;">Approve</a>
-                                <a href="#" class="btn" style="background:var(--danger); color: white; padding: 6px 12px;">Reject</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Zion Baptist Association</td>
-                            <td>₦ 15,000</td>
-                            <td>Exam Fees</td>
-                            <td><a href="#" class="btn btn-secondary" style="padding: 6px 12px;"><i class="ri-download-2-line"></i> View</a></td>
-                            <td class="action-buttons">
-                                <a href="#" class="btn" style="background:var(--success); color: white; padding: 6px 12px;">Approve</a>
-                                <a href="#" class="btn" style="background:var(--danger); color: white; padding: 6px 12px;">Reject</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </main>
     </div>
-
-    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
 </body>
 </html>
