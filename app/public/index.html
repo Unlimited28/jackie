@@ -3,87 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Royal Ambassadors</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <title>Royal Ambassadors - Ogun Baptist Conference</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/tokens.css">
+    <style>
+        /* Page-specific styles for the landing page */
+        body {
+             background:
+                radial-gradient(1200px 600px at 80% -10%, rgba(33,120,255,.25), transparent 60%),
+                radial-gradient(800px 400px at -10% 110%, rgba(81,184,255,.25), transparent 60%),
+                var(--bg);
+        }
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(11, 21, 48, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 16px 24px;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .brand .logo {
+            height: 40px;
+        }
+        .brand .title {
+            font-weight: 800;
+            font-size: 1.05rem;
+            letter-spacing: 0.4px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+        .nav-links a:hover {
+            color: var(--text);
+            background: rgba(255,255,255,.04);
+        }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            text-align: center;
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--text), var(--accent-2), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
-    <header class="public-header">
-        <div class="container">
-            <div class="logo-wrap">
-                <img src="../assets/images/logo.png" alt="Logo">
-                <div class="logo-text">
-                    <h1>ROYAL AMBASSADORS OF NIGERIA</h1>
-                    <h3>OGUN BAPTIST CONFERENCE</h3>
-                </div>
+    <header class="nav-header">
+        <div class="nav-container">
+            <div class="brand">
+                <img src="../assets/images/logo.png" alt="Logo" class="logo">
+                <div class="title">Royal Ambassadors</div>
             </div>
-            <nav class="public-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+
+            <nav class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
             </nav>
+
             <div class="header-actions">
-                <a href="auth.html?tab=login" class="btn btn-login">Login</a>
-                <a href="auth.html?tab=signup" class="btn btn-signup">Sign Up</a>
+                 <a href="login.html" class="btn btn-secondary">Login</a>
+                 <a href="register.html" class="btn btn-primary">Join Now</a>
             </div>
         </div>
     </header>
 
-    <main class="public-main">
-        <section class="hero-section">
+    <main>
+        <section class="hero">
             <div class="hero-content">
-                <h2>Touching the lives of boys...<br> <span>impacting the eternity of men!</span></h2>
-                <p class="bible-quote">“We are Ambassadors for Christ” – 2 Corinthians 5:20</p>
+                <h1>Ogun Baptist Conference<br>Digital Portal</h1>
+                <p>Touching the lives of boys, impacting the eternity of men! “We are Ambassadors for Christ” – 2 Corinthians 5:20</p>
                 <div class="hero-buttons">
-                    <a href="auth.html?tab=signup" class="btn btn-primary">Become an Ambassador</a>
-                    <a href="about.html" class="btn btn-secondary">Learn More</a>
+                    <a href="register.html" class="btn btn-primary"><i class="ri-user-add-line"></i> Become an Ambassador</a>
+                    <a href="login.html" class="btn btn-gold"><i class="ri-login-circle-line"></i> Access Portal</a>
                 </div>
             </div>
-        </section>
-
-        <section class="welcome-section">
-            <div class="container">
-                <div class="welcome-image">
-                    <img src="../assets/images/director.jpg" alt="Director">
-                </div>
-                <div class="welcome-text">
-                    <h2>Welcome Message from the Director</h2>
-                    <p>
-                        It is with great joy that I welcome you to the official portal of the Royal Ambassadors of Nigeria, Ogun Baptist Conference. Our mission is to equip young boys and men to be faithful disciples of Christ, living lives of integrity, service, and leadership.
-                    </p>
-                    <p>
-                        This platform is designed to provide you with all the resources, news, and updates you need to stay connected with our activities. Whether you are a member, a parent, or a supporter, we are glad to have you with us.
-                    </p>
-                    <h4><strong>Coun. Okunlola Moses Oluwaseun</strong></h4>
-                    <p><em>Conference Director</em></p>
-                </div>
-            </div>
-        </section>
-
-        <section class="admin-access-section" style="margin: 60px auto; max-width: 800px; background-color: #f9f9f9; padding: 40px 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center;">
-          <h2 style="color: #001f3f; font-size: 24px; margin-bottom: 15px;">Administrator Portal Access</h2>
-          <p style="font-size: 15px; color: #555;">For Ogun Baptist Conference Royal Ambassadors Admin Team Only</p>
-
-          <div style="margin-top: 25px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <a href="../ADMIN/login.html" class="btn" style="background-color: #001f3f; color: #fff; padding: 12px 25px; border-radius: 6px; font-weight: 600; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: 0.3s;">
-              🔐 Admin Login
-            </a>
-          </div>
         </section>
     </main>
-
-    <footer class="public-footer">
-        <div class="container">
-            <p>&copy; 2023 Royal Ambassadors of Nigeria, Ogun Baptist Conference. All Rights Reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Use</a>
-            </div>
-        </div>
-    </footer>
 
     <script src="../assets/js/main.js"></script>
 </body>

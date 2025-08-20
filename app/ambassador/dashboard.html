@@ -4,101 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ambassador Dashboard - Royal Ambassadors</title>
-    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/tokens.css">
+    <style>
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        .stat-card-sm {
+            background: var(--panel-2);
+            border-radius: var(--radius);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .stat-card-sm .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 1.5rem;
+        }
+        .stat-card-sm .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .stat-card-sm .label {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
-<body>
+<body class="dashboard-body">
+
     <div class="sidebar">
-        <div class="sidebar-header">
-            <img src="../assets/images/logo.png" alt="RAN Logo" class="sidebar-logo">
-            <h3>Ambassador</h3>
-            <p>Royal Ambassadors NG</p>
+        <div class="sidebar-brand">
+            <img src="../assets/images/logo.png" alt="Logo" class="logo">
+            <div class="title">Ambassador Portal</div>
         </div>
+
         <nav class="sidebar-nav">
-            <ul>
-                <li><a href="dashboard.html" class="active"><span class="icon">&#128200;</span> Dashboard</a></li>
-                <li><a href="my_exams.html"><span class="icon">&#128221;</span> My Exams</a></li>
-                <li><a href="my_results.html"><span class="icon">&#128211;</span> My Results</a></li>
-                <li><a href="profile_settings.html"><span class="icon">&#9881;</span> Profile Settings</a></li>
-                <li><a href="../public/blog.html"><span class="icon">&#128226;</span> Blog</a></li>
-                <li><a href="../public/contact.html"><span class="icon">&#128222;</span> Support</a></li>
-                <li><a href="../public/login.html" class="logout-link"><span class="icon">&#128682;</span> Logout</a></li>
-            </ul>
+            <a href="dashboard.html" class="nav-item active"><i class="ri-dashboard-line"></i><span>Dashboard</span></a>
+            <a href="my_exams.html" class="nav-item"><i class="ri-file-list-3-line"></i><span>My Exams</span></a>
+            <a href="my_results.html" class="nav-item"><i class="ri-trophy-line"></i><span>My Results</span></a>
+            <a href="profile_settings.html" class="nav-item"><i class="ri-user-settings-line"></i><span>Profile Settings</span></a>
+            <a href="../public/blog.html" class="nav-item"><i class="ri-newspaper-line"></i><span>Blog</span></a>
+            <a href="../public/contact.html" class="nav-item"><i class="ri-question-line"></i><span>Support</span></a>
         </nav>
+
         <div class="sidebar-footer">
-            <p>&copy; 2023 RAN Ogun</p>
+            <a href="../public/login.html" class="nav-item">
+                <i class="ri-logout-circle-r-line"></i>
+                <span>Logout</span>
+            </a>
         </div>
     </div>
 
     <div class="main-content">
-        <header class="header">
-            <button class="sidebar-toggle-button" id="sidebarToggle">&#9776;</button>
-            <div class="header-title">
-                <h1>Welcome, Ambassador!</h1>
-                <p>Here is an overview of your activities.</p>
+        <header class="main-header">
+            <div class="header-left">
+                <button class="menu-toggle"><i class="ri-menu-line"></i></button>
+                <h2>Welcome, Ambassador!</h2>
             </div>
-            <div class="header-user-info">
-                <div class="user-details">
-                    <span class="user-name">Ambassador Name</span>
-                    <span class="user-rank">Rank: Envoy</span>
-                    <span class="user-association">Association: Egba</span>
-                    <span class="user-uid">UID: RA001</span>
+            <div class="header-right">
+                <div class="profile-dropdown">
+                    <img src="../assets/images/pro.jpg" alt="User" class="profile-img">
+                    <div class="profile-info">
+                        <span class="profile-name">Ambassador Name</span>
+                        <span class="profile-role">Envoy</span>
+                    </div>
+                    <i class="ri-arrow-down-s-line"></i>
                 </div>
-                <img src="../assets/images/director.jpg" alt="User Avatar" class="admin-avatar">
             </div>
         </header>
 
         <main class="content-area">
-            <section class="stats-overview">
-                <div class="stat-card">
-                    <div class="stat-icon exams">&#128221;</div>
-                    <div class="stat-info">
-                        <h4>Exams Taken</h4>
-                        <p>5</p>
+            <div class="dashboard-grid">
+                <div class="stat-card-sm">
+                    <div class="icon" style="background-color: rgba(25, 140, 255, 0.15); color: var(--accent-1);"><i class="ri-file-list-3-line"></i></div>
+                    <div>
+                        <div class="value">5</div>
+                        <div class="label">Exams Taken</div>
                     </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon users">&#127941;</div>
-                    <div class="stat-info">
-                        <h4>Current Rank</h4>
-                        <p>Envoy</p>
+                <div class="stat-card-sm">
+                    <div class="icon" style="background-color: rgba(214, 183, 91, 0.15); color: var(--gold);"><i class="ri-shield-star-line"></i></div>
+                    <div>
+                        <div class="value">Envoy</div>
+                        <div class="label">Current Rank</div>
                     </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon blogs">&#128179;</div>
-                    <div class="stat-info">
-                        <h4>Pending Payments</h4>
-                        <p>2</p>
+                 <div class="stat-card-sm">
+                    <div class="icon" style="background-color: rgba(255, 90, 122, 0.15); color: var(--danger);"><i class="ri-bank-card-line"></i></div>
+                    <div>
+                        <div class="value">2</div>
+                        <div class="label">Pending Payments</div>
                     </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon vouchers">&#128276;</div>
-                    <div class="stat-info">
-                        <h4>Notifications</h4>
-                        <p>3</p>
+                <div class="stat-card-sm">
+                    <div class="icon" style="background-color: rgba(66, 211, 146, 0.15); color: var(--success);"><i class="ri-notification-3-line"></i></div>
+                    <div>
+                        <div class="value">3</div>
+                        <div class="label">Notifications</div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <section class="notifications-section">
-                <h2>Recent Notifications</h2>
-                <div class="card-grid-container">
-                    <div class="card">
-                        <div class="card-content">
-                            <h3 class="card-title">New Exam Available</h3>
-                            <p>The Stage 2 Advancement Exam is now available. You can take it until October 31st.</p>
-                            <a href="my_exams.html" class="btn btn-primary">Go to Exams</a>
-                        </div>
+            <div class="content-card">
+                <h3>Recent Notifications</h3>
+                <div class="dashboard-grid" style="margin-top: 16px;">
+                    <div class="content-card" style="background: var(--panel);">
+                        <h4>New Exam Available</h4>
+                        <p>The Stage 2 Advancement Exam is now available. You can take it until October 31st.</p>
+                        <a href="my_exams.html" class="btn btn-primary" style="margin-top: 16px;">Go to Exams</a>
                     </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <h3 class="card-title">Camp Registration Open</h3>
-                            <p>Registration for the Annual Leadership Camp is now open. Register before the deadline!</p>
-                        </div>
+                    <div class="content-card" style="background: var(--panel);">
+                        <h4>Camp Registration Open</h4>
+                        <p>Registration for the Annual Leadership Camp is now open. Register before the deadline!</p>
                     </div>
                 </div>
-            </section>
+            </div>
         </main>
     </div>
+
     <script src="../assets/js/main.js"></script>
 </body>
 </html>
