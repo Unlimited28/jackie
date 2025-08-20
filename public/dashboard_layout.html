@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Royal Ambassadors Portal</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <div class="logo">RA</div>
+            <div class="title">Ambassador Portal</div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active">
+                <i class="ri-dashboard-line"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-user-line"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-file-list-3-line"></i>
+                <span>Exams</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-trophy-line"></i>
+                <span>Results</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-gallery-line"></i>
+                <span>Gallery</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-newspaper-line"></i>
+                <span>Blog</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-question-line"></i>
+                <span>Support</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="index.html" class="nav-item">
+                <i class="ri-logout-circle-r-line"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header class="main-header">
+            <div class="header-left">
+                <button class="menu-toggle"><i class="ri-menu-line"></i></button>
+                <h2>Dashboard</h2>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <button class="notification-btn">
+                    <i class="ri-notification-3-line"></i>
+                    <span class="badge">3</span>
+                </button>
+                <div class="profile-dropdown">
+                    <img src="https://i.pravatar.cc/40?u=ambassador" alt="User" class="profile-img">
+                    <div class="profile-info">
+                        <span class="profile-name">Amb. John Doe</span>
+                        <span class="profile-role">Ambassador</span>
+                    </div>
+                    <i class="ri-arrow-down-s-line"></i>
+                </div>
+            </div>
+        </header>
+
+        <main class="content-area">
+            <!-- Page-specific content will be injected here -->
+            <div class="content-card">
+                <h3>Welcome, Ambassador!</h3>
+                <p>This is a sample dashboard layout. The content for each page will be placed here. This card is an example of how content might be styled.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
