@@ -4,94 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Ambassadors - Royal Ambassadors</title>
-    <link rel="stylesheet" href="./css/manage_ambassadors.css">
+
+    <!-- Google Fonts & Remix Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Theme & Dashboard CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
 <body>
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <img src="../assets/images/logo.png" alt="RAN Logo" class="sidebar-logo">
-            <h3>Association President</h3>
-            <p>Royal Ambassadors NG</p>
-        </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="dashboard.html"><span class="icon">&#128200;</span> Dashboard</a></li>
-                <li><a href="manage_ambassadors.html" class="active"><span class="icon">&#128101;</span> Manage Ambassadors</a></li>
-                <li><a href="exam_approvals.html"><span class="icon">&#128221;</span> Exam Approvals</a></li>
-                <li><a href="camp_registrations.html"><span class="icon">&#128228;</span> Camp Registrations</a></li>
-                <li><a href="payments_upload.html"><span class="icon">&#128179;</span> Payments Upload</a></li>
-                <li><a href="notifications.html"><span class="icon">&#128276;</span> Notifications</a></li>
-                <li><a href="profile_settings.html"><span class="icon">&#9881;</span> Profile Settings</a></li>
-                <li><a href="../public/login.html" class="logout-link"><span class="icon">&#128682;</span> Logout</a></li>
-            </ul>
-        </nav>
-        <div class="sidebar-footer">
-            <p>&copy; 2023 RAN Ogun</p>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <header class="header">
-        <button class="sidebar-toggle-button" id="sidebarToggle">&#9776;</button>
-            <div class="header-title">
-                <h1>Manage Ambassadors</h1>
-                <p>View, edit, and approve ambassadors in your association.</p>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">RA</div>
+                <div class="title">President Portal</div>
             </div>
-            <div class="header-user-info">
-                <img src="../assets/images/pro.jpg" alt="User Avatar" class="admin-avatar">
-                <span>President Name</span>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html"><i class="ri-dashboard-line"></i> Dashboard</a>
+                <a href="manage_ambassadors.html" class="active"><i class="ri-team-line"></i> Manage Ambassadors</a>
+                <a href="exam_approvals.html"><i class="ri-checkbox-multiple-line"></i> Exam Approvals</a>
+                <a href="camp_registrations.html"><i class="ri-quill-pen-line"></i> Camp Registrations</a>
+                <a href="payments_upload.html"><i class="ri-upload-cloud-2-line"></i> Upload Payments</a>
+                <a href="notifications.html"><i class="ri-notification-3-line"></i> Notifications</a>
+                <a href="profile_settings.html"><i class="ri-user-settings-line"></i> Profile Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="../forms/logout.php"><i class="ri-logout-box-r-line"></i> Logout</a>
             </div>
-        </header>
+        </aside>
 
-        <main class="content-area">
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Rank</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Ambassador One</td>
-                            <td>one@example.com</td>
-                            <td>Envoy</td>
-                            <td><span class="status status-active">Active</span></td>
-                            <td class="action-buttons">
-                                <button class="btn btn-edit">Edit</button>
-                                <button class="btn btn-delete">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Ambassador Two</td>
-                            <td>two@example.com</td>
-                            <td>Senior Envoy</td>
-                            <td><span class="status status-active">Active</span></td>
-                            <td class="action-buttons">
-                                <button class="btn btn-edit">Edit</button>
-                                <button class="btn btn-delete">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Ambassador Three</td>
-                            <td>three@example.com</td>
-                            <td>Aspirant</td>
-                            <td><span class="status status-pending">Pending Approval</span></td>
-                            <td class="action-buttons">
-                                <button class="btn btn-success">Approve</button>
-                                <button class="btn btn-edit">Edit</button>
-                                <button class="btn btn-delete">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="menu-toggle"><i class="ri-menu-2-line"></i></button>
+                    <h1 class="page-title">Manage Ambassadors</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../assets/images/director.jpg" alt="User Avatar">
+                        <div class="user-info">
+                            <span class="user-name">Pres. Ajibola</span>
+                            <span class="user-role">Agape Association</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Wrapper -->
+            <div class="content-wrapper">
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h3>Ambassadors in Agape Association</h3>
+                        <div style="display: flex; gap: 16px;">
+                            <input type="search" class="form-control" placeholder="Search Ambassadors...">
+                            <button class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                    <div class="dash-card-content">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Unique ID</th>
+                                    <th>Full Name</th>
+                                    <th>Rank</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ogbc//ra//6254</td>
+                                    <td>John Doe</td>
+                                    <td>Envoy</td>
+                                    <td><span class="status status-approved">Active</span></td>
+                                    <td><a href="#" class="btn btn-secondary btn-sm">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>ogbc//ra//7189</td>
+                                    <td>Samuel Adekunle</td>
+                                    <td>Intern</td>
+                                    <td><span class="status status-approved">Active</span></td>
+                                    <td><a href="#" class="btn btn-secondary btn-sm">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>ogbc//ra//8345</td>
+                                    <td>David Ojo</td>
+                                    <td>Candidate</td>
+                                    <td><span class="status status-pending">Pending Approval</span></td>
+                                    <td><a href="#" class="btn btn-primary btn-sm">Approve</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
-    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
 </body>
 </html>

@@ -3,89 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Exam - Royal Ambassadors</title>
-    <link rel="stylesheet" href="css/create_exam.css">
+    <title>Create Exam - Super Admin</title>
+
+    <!-- Google Fonts & Remix Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Theme & Dashboard CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
 <body>
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <img src="../assets/images/logo.png" alt="RAN Logo" class="sidebar-logo">
-            <h3>Admin Panel</h3>
-            <p>Royal Ambassadors NG</p>
-        </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="dashboard.html"><span class="icon">&#128200;</span> Dashboard</a></li>
-                <li><a href="user-management.html"><span class="icon">&#128101;</span> User Management</a></li>
-                <li><a href="exam-management.html" class="active"><span class="icon">&#128221;</span> Exam Management</a></li>
-                <li><a href="create_exam.html" class="active"><span class="icon">&#128221;</span> Create Exam</a></li>
-                <li><a href="finance_dashboard.html"><span class="icon">&#128179;</span> Finance Dashboard</a></li>
-                <li><a href="blog-management.html"><span class="icon">&#128226;</span> Blog Management</a></li>
-                <li><a href="gallery-management.html"><span class="icon">&#127748;</span> Gallery Management</a></li>
-                <li><a href="notifications_center.html"><span class="icon">&#128276;</span> Notifications Center</a></li>
-                <li><a href="settings.html"><span class="icon">&#9881;</span> Settings</a></li>
-                <li><a href="../public/login.html" class="logout-link"><span class="icon">&#128682;</span> Logout</a></li>
-            </ul>
-        </nav>
-        <div class="sidebar-footer">
-            <p>&copy; 2023 RAN Ogun</p>
-        </div>
-    </div>
-    <div class="main-content">
-        <header class="header">
-            <button class="sidebar-toggle-button" id="sidebarToggle">&#9776;</button>
-            <div class="header-title">
-                <h1>Create New Exam</h1>
-                <p>Build a new exam for your ambassadors.</p>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">RA</div>
+                <div class="title">Super Admin</div>
             </div>
-            <div class="header-user-info">
-                <img src="../assets/images/new8.jpg" alt="Admin Avatar" class="admin-avatar">
-                <span>Admin Name</span>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html"><i class="ri-dashboard-line"></i> Dashboard</a>
+
+                <div class="nav-title">User Management</div>
+                <a href="user-management.html"><i class="ri-team-line"></i> Manage Users</a>
+                <a href="finance_dashboard.html"><i class="ri-bank-card-line"></i> Finance Dashboard</a>
+                <a href="voucher-management.html"><i class="ri-coupon-3-line"></i> Voucher Management</a>
+                <a href="camp_files.html"><i class="ri-file-excel-2-line"></i> Camp Files</a>
+
+                <div class="nav-title">Content</div>
+                <a href="exam-management.html" class="active"><i class="ri-file-list-3-line"></i> Exam Management</a>
+                <a href="blog-management.html"><i class="ri-article-line"></i> Blog Management</a>
+                <a href="gallery-management.html"><i class="ri-gallery-line"></i> Gallery Management</a>
+
+                <div class="nav-title">Marketing</div>
+                <a href="ads-management.html"><i class="ri-advertisement-line"></i> Ads Management</a>
+
+                <div class="nav-title">System</div>
+                <a href="notification-management.html"><i class="ri-notification-3-line"></i> Notifications</a>
+                <a href="system_settings.html"><i class="ri-settings-3-line"></i> System Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="logout.html"><i class="ri-logout-box-r-line"></i> Logout</a>
             </div>
-        </header>
-        <main class="content-area">
-            <div class="form-container">
-                <h2>Create New Exam</h2>
-                <form id="createExamForm">
-                    <div class="form-group">
-                        <label for="examTitle">Exam Title</label>
-                        <input type="text" id="examTitle" name="examTitle" required>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <h1 class="page-title">Create New Exam</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../assets/images/pro.jpg" alt="User Avatar">
                     </div>
-                    <div class="form-group">
-                        <label for="examRank">For Rank</label>
-                        <select id="examRank" name="examRank" required>
-                            <option value="">Select Rank</option>
-                            <option value="prospect">Prospect</option>
-                            <option value="intern">Intern</option>
-                            <option value="envoy">Envoy</option>
-                        </select>
+                </div>
+            </header>
+
+            <!-- Content Wrapper -->
+            <div class="content-wrapper">
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h3>Exam Details</h3>
                     </div>
-                    <div class="form-group">
-                        <label for="duration">Duration (minutes)</label>
-                        <input type="number" id="duration" name="duration" min="1" required>
+                    <div class="dash-card-content">
+                        <form class="dash-form">
+                            <div class="form-group">
+                                <label for="title">Exam Title</label>
+                                <input type="text" id="title" class="form-control" placeholder="e.g., The Book of Romans">
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea id="description" class="form-control" rows="3" placeholder="A brief description of the exam..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="rank">Rank Requirement</label>
+                                <select id="rank" name="rank_id" class="form-control" required>
+                                    <option value="">-- Select Rank --</option>
+                                    <option value="1">Candidate</option>
+                                    <option value="2">Assistant Intern</option>
+                                    <option value="3">Intern</option>
+                                    <option value="4">Senior Intern</option>
+                                    <option value="5">Envoy</option>
+                                    <option value="6">Senior Envoy</option>
+                                    <option value="7">Special Envoy</option>
+                                    <option value="8">Dean</option>
+                                    <option value="9">Ambassador</option>
+                                    <option value="10">Ambassador Extraordinary</option>
+                                    <option value="11">Ambassador Plenipotentiary</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="duration">Duration (in minutes)</label>
+                                <input type="number" id="duration" class="form-control" placeholder="e.g., 30">
+                            </div>
+                            <div class="form-group">
+                                <label for="total_questions">Total Questions</label>
+                                <input type="number" id="total_questions" class="form-control" placeholder="e.g., 50">
+                            </div>
+                             <div class="form-group">
+                                <label for="pass_score">Pass Score (%)</label>
+                                <input type="number" id="pass_score" class="form-control" placeholder="e.g., 70">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Exam & Add Questions</button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="startDateTime">Start Date & Time</label>
-                        <input type="datetime-local" id="startDateTime" name="startDateTime" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="endDateTime">End Date & Time</label>
-                        <input type="datetime-local" id="endDateTime" name="endDateTime" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="instructions">Instructions</label>
-                        <textarea id="instructions" name="instructions" rows="4"></textarea>
-                    </div>
-                    <div id="questionsContainer">
-                        <!-- Questions will be added here dynamically -->
-                    </div>
-                    <button type="button" id="addQuestionBtn" class="btn btn-secondary">Add Question</button>
-                    <button type="submit" class="btn btn-secondary">Save Draft</button>
-                    <button type="submit" class="btn btn-primary">Publish Exam</button>
-                </form>
+                </div>
             </div>
         </main>
     </div>
-    <script src="../assets/js/main.js"></script>
 </body>
 </html>

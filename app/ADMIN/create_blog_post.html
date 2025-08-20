@@ -3,69 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Blog Post - Royal Ambassadors</title>
-    <link rel="stylesheet" href="css/create_blog_post.css">
+    <title>Create Blog Post - Super Admin</title>
+
+    <!-- Google Fonts & Remix Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Theme & Dashboard CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
 <body>
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <img src="../assets/images/logo.png" alt="RAN Logo" class="sidebar-logo">
-            <h3>Admin Panel</h3>
-            <p>Royal Ambassadors NG</p>
-        </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="dashboard.html"><span class="icon">&#128200;</span> Dashboard</a></li>
-                <li><a href="user-management.html"><span class="icon">&#128101;</span> User Management</a></li>
-                <li><a href="exam-management.html"><span class="icon">&#128221;</span> Exam Management</a></li>
-                <li><a href="blog-management.html" class="active"><span class="icon">&#128226;</span> Blog Management</a></li>
-                <li><a href="gallery-management.html"><span class="icon">&#127748;</span> Gallery Management</a></li>
-                <li><a href="notifications_center.html"><span class="icon">&#128276;</span> Notifications Center</a></li>
-                <li><a href="settings.html"><span class="icon">&#9881;</span> Settings</a></li>
-                <li><a href="../public/login.html" class="logout-link"><span class="icon">&#128682;</span> Logout</a></li>
-            </ul>
-        </nav>
-        <div class="sidebar-footer">
-            <p>&copy; 2023 RAN Ogun</p>
-        </div>
-    </div>
-    <div class="main-content">
-        <header class="header">
-            <button class="sidebar-toggle-button" id="sidebarToggle">&#9776;</button>
-            <div class="header-title">
-                <h1>Create New Blog Post</h1>
-                <p>Publish a new article, news, or update.</p>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">RA</div>
+                <div class="title">Super Admin</div>
             </div>
-            <div class="header-user-info">
-                <img src="../assets/images/new8.jpg" alt="Admin Avatar" class="admin-avatar">
-                <span>Admin Name</span>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html"><i class="ri-dashboard-line"></i> Dashboard</a>
+
+                <div class="nav-title">User Management</div>
+                <a href="user-management.html"><i class="ri-team-line"></i> Manage Users</a>
+                <a href="finance_dashboard.html"><i class="ri-bank-card-line"></i> Finance Dashboard</a>
+                <a href="voucher-management.html"><i class="ri-coupon-3-line"></i> Voucher Management</a>
+                <a href="camp_files.html"><i class="ri-file-excel-2-line"></i> Camp Files</a>
+
+                <div class="nav-title">Content</div>
+                <a href="exam-management.html"><i class="ri-file-list-3-line"></i> Exam Management</a>
+                <a href="blog-management.html" class="active"><i class="ri-article-line"></i> Blog Management</a>
+                <a href="gallery-management.html"><i class="ri-gallery-line"></i> Gallery Management</a>
+
+                <div class="nav-title">Marketing</div>
+                <a href="ads-management.html"><i class="ri-advertisement-line"></i> Ads Management</a>
+
+                <div class="nav-title">System</div>
+                <a href="notification-management.html"><i class="ri-notification-3-line"></i> Notifications</a>
+                <a href="system_settings.html"><i class="ri-settings-3-line"></i> System Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="logout.html"><i class="ri-logout-box-r-line"></i> Logout</a>
             </div>
-        </header>
-        <main class="content-area">
-            <div class="form-container">
-                <h2>Create New Blog Post</h2>
-                <form id="createBlogPostForm">
-                    <div class="form-group">
-                        <label for="postTitle">Post Title</label>
-                        <input type="text" id="postTitle" name="postTitle" required>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <h1 class="page-title">Create New Blog Post</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../assets/images/pro.jpg" alt="User Avatar">
                     </div>
-                    <div class="form-group">
-                        <label for="postContent">Content</label>
-                        <textarea id="postContent" name="postContent" rows="10" required></textarea>
+                </div>
+            </header>
+
+            <!-- Content Wrapper -->
+            <div class="content-wrapper">
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h3>Post Editor</h3>
                     </div>
-                    <div class="form-group">
-                        <label for="coverImage">Cover Image</label>
-                        <input type="file" id="coverImage" name="coverImage" accept="image/*">
+                    <div class="dash-card-content">
+                        <form class="dash-form">
+                            <div class="form-group">
+                                <label for="post_title">Post Title</label>
+                                <input type="text" id="post_title" class="form-control" placeholder="Enter a catchy title...">
+                            </div>
+                            <div class="form-group">
+                                <label for="post_content">Content</label>
+                                <textarea id="post_content" class="form-control" rows="15" placeholder="Write your article here..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="feature_image">Feature Image</label>
+                                <input type="file" id="feature_image" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="category">Category</label>
+                                <input type="text" id="category" class="form-control" placeholder="e.g., Leadership, Events">
+                            </div>
+                            <div style="display: flex; gap: 16px;">
+                                <button type="submit" class="btn btn-secondary">Save as Draft</button>
+                                <button type="submit" class="btn btn-primary">Publish Post</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="tags">Tags (comma-separated)</label>
-                        <input type="text" id="tags" name="tags">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Publish Post</button>
-                </form>
+                </div>
             </div>
         </main>
     </div>
-    <script src="../assets/js/main.js"></script>
 </body>
 </html>

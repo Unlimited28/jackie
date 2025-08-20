@@ -3,136 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Management - Royal Ambassadors Admin</title>
-    <link rel="stylesheet" href="css/exam-management.css">
+    <title>Exam Management - Super Admin</title>
+
+    <!-- Google Fonts & Remix Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Theme & Dashboard CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
 <body>
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <img src="../assets/images/logo.png" alt="RAN Logo" class="sidebar-logo">
-            <h3>Admin Panel</h3>
-            <p>Royal Ambassadors Ogun baptist conference</p>
-        </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="dashboard.html"><span class="icon">&#128200;</span> Dashboard</a></li>
-                <li><a href="user-management.html"><span class="icon">&#128101;</span> User Management</a></li>
-                <li><a href="exam-management.html" class="active"><span class="icon">&#128221;</span> Exam Management</a></li>
-                <li><a href="voucher-management.html"><span class="icon">&#127915;</span> Voucher Management</a></li>
-                <li><a href="blog-management.html"><span class="icon">&#128226;</span> Blog Management</a></li>
-                <li><a href="ads-management.html"><span class="icon">&#128227;</span> Ads & Promotions</a></li>
-                <li><a href="notification-management.html"><span class="icon">&#128276;</span> Notifications</a></li>
-                <li><a href="settings.html"><span class="icon">&#9881;</span> Settings</a></li>
-                <li><a href="../login.html" class="logout-link"><span class="icon">&#128682;</span> Logout</a></li>
-            </ul>
-        </nav>
-        <div class="sidebar-footer">
-            <p>&copy; 2023 RAN Ogun</p>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <header class="header">
-        <button class="sidebar-toggle-button" id="sidebarToggle">&#9776;</button>
-            <div class="header-title">
-                <h1>Exam Management</h1>
-                <p>Manage all exams and assessments.</p>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">RA</div>
+                <div class="title">Super Admin</div>
             </div>
-            <div class="header-user-info">
-                <img src="../assets/images/new8.jpg" alt="Admin Avatar" class="admin-avatar">
-                <span>Admin Name</span>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html"><i class="ri-dashboard-line"></i> Dashboard</a>
+
+                <div class="nav-title">User Management</div>
+                <a href="user-management.html"><i class="ri-team-line"></i> Manage Users</a>
+                <a href="finance_dashboard.html"><i class="ri-bank-card-line"></i> Finance Dashboard</a>
+                <a href="voucher-management.html"><i class="ri-coupon-3-line"></i> Voucher Management</a>
+                <a href="camp_files.html"><i class="ri-file-excel-2-line"></i> Camp Files</a>
+
+                <div class="nav-title">Content</div>
+                <a href="exam-management.html" class="active"><i class="ri-file-list-3-line"></i> Exam Management</a>
+                <a href="blog-management.html"><i class="ri-article-line"></i> Blog Management</a>
+                <a href="gallery-management.html"><i class="ri-gallery-line"></i> Gallery Management</a>
+
+                <div class="nav-title">Marketing</div>
+                <a href="ads-management.html"><i class="ri-advertisement-line"></i> Ads Management</a>
+
+                <div class="nav-title">System</div>
+                <a href="notification-management.html"><i class="ri-notification-3-line"></i> Notifications</a>
+                <a href="system_settings.html"><i class="ri-settings-3-line"></i> System Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="logout.html"><i class="ri-logout-box-r-line"></i> Logout</a>
             </div>
-        </header>
+        </aside>
 
-        <main class="content-area">
-            <div class="toolbar">
-                <input type="text" placeholder="Search exams by title..." class="search-input">
-                <a href="exam-questions.html" class="btn btn-primary" id="create-new-exam-btn">
-  <span class="icon">&#10010;</span> Create New Exam
-</a>
-
-                </button>
-            </div>
-
-            <div class="card-grid-container" id="exam-list">
-                <!-- Exam Card Example 1 -->
-                <div class="card exam-card">
-                    <div class="card-content">
-                        <div class="exam-status status-active">Active</div>
-                        <h3 class="card-title">Stage 1 Advancement Exam</h3>
-                        <p class="card-meta">Created: 2023-08-15 | Questions: 50 | Duration: 60 mins</p>
-                        <p class="card-description">
-                            This exam covers the foundational knowledge required for Stage 1 candidates. 
-                            Focuses on history and basic principles.
-                        </p>
-                        <div class="exam-stats">
-                            <div><span>Participants</span><strong>120</strong></div>
-                            <div><span>Avg. Score</span><strong>75%</strong></div>
-                            <div><span>Pass Rate</span><strong>80%</strong></div>
-                        </div>
-                    </div>
-                    <div class="card-actions">
-                        <a href="#" class="btn btn-secondary btn-view"><span class="icon">&#128065;</span> View Details</a>
-                        <a href="#" class="btn btn-edit"><span class="icon">&#9998;</span> Edit</a>
-                        <a href="#" class="btn btn-assign"><span class="icon">&#128101;</span> Assign Users</a>
-                        <a href="#" class="btn btn-delete" title="Delete Exam"><span class="icon">&#128465;</span></a>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <h1 class="page-title">Exam Management</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../assets/images/pro.jpg" alt="User Avatar">
                     </div>
                 </div>
+            </header>
 
-                <!-- Exam Card Example 2 -->
-                <div class="card exam-card">
-                    <div class="card-content">
-                        <div class="exam-status status-pending">Upcoming</div>
-                        <h3 class="card-title">Leadership Training Assessment</h3>
-                        <p class="card-meta">Scheduled: 2023-11-01 | Questions: 30 | Duration: 45 mins</p>
-                        <p class="card-description">
-                            Assessment for participants of the recent leadership training workshop.
-                        </p>
-                         <div class="exam-stats">
-                            <div><span>Registered</span><strong>45</strong></div>
-                            <div><span>Starts In</span><strong>15 Days</strong></div>
-                            <div><span>Status</span><strong>Draft</strong></div>
-                        </div>
+            <!-- Content Wrapper -->
+            <div class="content-wrapper">
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h3>All Exams</h3>
+                        <a href="create_exam.html" class="btn btn-primary"><i class="ri-add-line"></i> Create New Exam</a>
                     </div>
-                    <div class="card-actions">
-                        <a href="#" class="btn btn-secondary btn-view"><span class="icon">&#128065;</span> View Details</a>
-                        <a href="#" class="btn btn-edit"><span class="icon">&#9998;</span> Edit</a>
-                        <a href="#" class="btn btn-assign"><span class="icon">&#128101;</span> Assign Users</a>
-                        <a href="#" class="btn btn-delete" title="Delete Exam"><span class="icon">&#128465;</span></a>
+                    <div class="dash-card-content">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Exam Title</th>
+                                    <th>Rank</th>
+                                    <th>Questions</th>
+                                    <th>Duration</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>The Life of Paul</td>
+                                    <td>Envoy</td>
+                                    <td>30</td>
+                                    <td>30 mins</td>
+                                    <td>
+                                        <a href="exam-questions.html" class="btn btn-secondary btn-sm">Questions</a>
+                                        <a href="#" class="btn btn-secondary btn-sm">Edit</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Old Testament Survey</td>
+                                    <td>Senior Intern</td>
+                                    <td>50</td>
+                                    <td>45 mins</td>
+                                    <td>
+                                        <a href="exam-questions.html" class="btn btn-secondary btn-sm">Questions</a>
+                                        <a href="#" class="btn btn-secondary btn-sm">Edit</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                
-                <!-- Exam Card Example 3 -->
-                <div class="card exam-card">
-                    <div class="card-content">
-                        <div class="exam-status status-inactive">Closed</div>
-                        <h3 class="card-title">Annual Conference Quiz</h3>
-                        <p class="card-meta">Conducted: 2023-06-20 | Questions: 25 | Duration: 30 mins</p>
-                        <p class="card-description">
-                            A fun quiz held during the annual conference, results are archived.
-                        </p>
-                        <div class="exam-stats">
-                            <div><span>Participants</span><strong>250</strong></div>
-                            <div><span>Avg. Score</span><strong>88%</strong></div>
-                            <div><span>Status</span><strong>Archived</strong></div>
-                        </div>
-                    </div>
-                    <div class="card-actions">
-                        <a href="#" class="btn btn-secondary btn-view"><span class="icon">&#128065;</span> View Results</a>
-                        <a href="#" class="btn btn-delete" title="Archive Exam"><span class="icon">&#128450;</span></a>
-                    </div>
-                </div>
-                <!-- Add more exam cards as placeholders -->
-            </div>
-            <div class="pagination exam-pagination">
-                 <!-- Pagination will be similar to user-management -->
-                <button class="btn btn-secondary" disabled>&laquo; Previous</button>
-                <span>Page 1 of 5</span>
-                <button class="btn btn-secondary">Next &raquo;</button>
             </div>
         </main>
     </div>
-
-   
 </body>
 </html>

@@ -3,144 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Management - Royal Ambassadors Admin</title>
-    <link rel="stylesheet" href="css/blog-management.css">
+    <title>Blog Management - Super Admin</title>
+
+    <!-- Google Fonts & Remix Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Theme & Dashboard CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
 <body>
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <img src="../assets/images/logo.png" alt="RAN Logo" class="sidebar-logo">
-            <h3>Admin Panel</h3>
-            <p>Royal Ambassadors NG</p>
-        </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="dashboard.html"><span class="icon">&#128200;</span> Dashboard</a></li>
-                <li><a href="user-management.html"><span class="icon">&#128101;</span> User Management</a></li>
-                <li><a href="exam-management.html"><span class="icon">&#128221;</span> Exam Management</a></li>
-                <li><a href="voucher.html"><span class="icon">&#127915;</span> Voucher Management</a></li>
-                <li><a href="blog-management.html" class="active"><span class="icon">&#128226;</span> Blog Management</a></li>
-                <li><a href="ads-management.html"><span class="icon">&#128227;</span> Ads & Promotions</a></li>
-                <li><a href="notification-management.html"><span class="icon">&#128276;</span> Notifications</a></li>
-                <li><a href="settings.html"><span class="icon">&#9881;</span> Settings</a></li>
-                <li><a href="../public/login.html" class="logout-link"><span class="icon">&#128682;</span> Logout</a></li>
-            </ul>
-        </nav>
-        <div class="sidebar-footer">
-            <p>&copy; 2023 RAN Ogun</p>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <header class="header">
-        <button class="sidebar-toggle-button" id="sidebarToggle">&#9776;</button>
-            <div class="header-title">
-                <h1>Blog Management</h1>
-                <p>Create, edit, and manage blog posts.</p>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">RA</div>
+                <div class="title">Super Admin</div>
             </div>
-            <div class="header-user-info">
-                <img src="../assets/images/new8.jpg" alt="Admin Avatar" class="admin-avatar">
-                <span>Admin Name</span>
-            </div>
-        </header>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html"><i class="ri-dashboard-line"></i> Dashboard</a>
 
-        <main class="content-area">
-            <div class="toolbar blog-toolbar">
-                <div class="toolbar-left">
-                    <input type="text" placeholder="Search posts by title or tag..." class="search-input">
-                    <select id="filterCategory" class="filter-select">
-                        <option value="">All Categories</option>
-                        <option value="news">News</option>
-                        <option value="events">Events</option>
-                        <option value="articles">Articles</option>
-                        <option value="updates">Updates</option>
-                    </select>
-                     <select id="filterStatusBlog" class="filter-select">
-                        <option value="">All Statuses</option>
-                        <option value="published">Published</option>
-                        <option value="draft">Draft</option>
-                        <option value="archived">Archived</option>
-                    </select>
-                    <button class="btn btn-secondary filter-btn"><span class="icon">&#128269;</span> Filter</button>
+                <div class="nav-title">User Management</div>
+                <a href="user-management.html"><i class="ri-team-line"></i> Manage Users</a>
+                <a href="finance_dashboard.html"><i class="ri-bank-card-line"></i> Finance Dashboard</a>
+                <a href="voucher-management.html"><i class="ri-coupon-3-line"></i> Voucher Management</a>
+                <a href="camp_files.html"><i class="ri-file-excel-2-line"></i> Camp Files</a>
+
+                <div class="nav-title">Content</div>
+                <a href="exam-management.html"><i class="ri-file-list-3-line"></i> Exam Management</a>
+                <a href="blog-management.html" class="active"><i class="ri-article-line"></i> Blog Management</a>
+                <a href="gallery-management.html"><i class="ri-gallery-line"></i> Gallery Management</a>
+
+                <div class="nav-title">Marketing</div>
+                <a href="ads-management.html"><i class="ri-advertisement-line"></i> Ads Management</a>
+
+                <div class="nav-title">System</div>
+                <a href="notification-management.html"><i class="ri-notification-3-line"></i> Notifications</a>
+                <a href="system_settings.html"><i class="ri-settings-3-line"></i> System Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="logout.html"><i class="ri-logout-box-r-line"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <h1 class="page-title">Blog Management</h1>
                 </div>
-                <a href="create_blog_post.html" class="btn btn-primary">
-                    <span class="icon">&#10010;</span> Create New Post
-                </a>
-            </div>
-
-            <div class="card-grid-container blog-posts-grid">
-                <!-- Blog Post Card Example 1 -->
-                <div class="card blog-post-card">
-                    <div class="card-image-placeholder">Featured Image (300x200)</div>
-                    <div class="card-content">
-                        <h3 class="card-title">Annual Conference Highlights 2023</h3>
-                        <p class="card-meta">
-                            <span class="post-category">Events</span> | 
-                            Published: <span class="post-date">2023-09-15</span> | 
-                            Author: <span class="post-author">Admin</span>
-                        </p>
-                        <div class="post-status status-published">Published</div>
-                        <p class="card-description">
-                            A quick recap of the major events, speakers, and outcomes from this year's successful annual conference...
-                        </p>
-                    </div>
-                    <div class="card-actions">
-                        <a href="#" class="btn btn-secondary btn-view"><span class="icon">&#128065;</span> View</a>
-                        <a href="#" class="btn btn-edit"><span class="icon">&#9998;</span> Edit</a>
-                        <a href="#" class="btn btn-delete" title="Delete Post"><span class="icon">&#128465;</span></a>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../assets/images/pro.jpg" alt="User Avatar">
                     </div>
                 </div>
+            </header>
 
-                <!-- Blog Post Card Example 2 -->
-                <div class="card blog-post-card">
-                    <div class="card-image-placeholder">Featured Image (300x200)</div>
-                    <div class="card-content">
-                        <h3 class="card-title">New Leadership Training Program Announced</h3>
-                         <p class="card-meta">
-                            <span class="post-category">News</span> | 
-                            Updated: <span class="post-date">2023-10-02</span> | 
-                            Author: <span class="post-author">Admin</span>
-                        </p>
-                        <div class="post-status status-draft">Draft</div>
-                        <p class="card-description">
-                            We are excited to announce the launch of our new leadership training program designed for chapter leaders...
-                        </p>
+            <!-- Content Wrapper -->
+            <div class="content-wrapper">
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h3>All Blog Posts</h3>
+                        <a href="create_blog_post.html" class="btn btn-primary"><i class="ri-add-line"></i> Create New Post</a>
                     </div>
-                    <div class="card-actions">
-                        <a href="#" class="btn btn-secondary btn-view"><span class="icon">&#128065;</span> Preview</a>
-                        <a href="#" class="btn btn-edit"><span class="icon">&#9998;</span> Edit</a>
-                        <a href="#" class="btn btn-delete" title="Delete Post"><span class="icon">&#128465;</span></a>
+                    <div class="dash-card-content">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>The Importance of Youth Leadership in the Church</td>
+                                    <td>Super Admin</td>
+                                    <td>2025-08-15</td>
+                                    <td><span class="status status-approved">Published</span></td>
+                                    <td>
+                                        <a href="#" class="btn btn-secondary btn-sm">Edit</a>
+                                        <a href="#" class="btn btn-secondary btn-sm" style="background: var(--danger); color: white;">Delete</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Recap: Annual State Camp 2025</td>
+                                    <td>Admin</td>
+                                    <td>2025-08-01</td>
+                                    <td><span class="status status-approved">Published</span></td>
+                                    <td>
+                                        <a href="#" class="btn btn-secondary btn-sm">Edit</a>
+                                        <a href="#" class="btn btn-secondary btn-sm" style="background: var(--danger); color: white;">Delete</a>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>Upcoming Events in Q4</td>
+                                    <td>Super Admin</td>
+                                    <td>-</td>
+                                    <td><span class="status status-pending">Draft</span></td>
+                                    <td>
+                                        <a href="#" class="btn btn-secondary btn-sm">Edit</a>
+                                        <a href="#" class="btn btn-secondary btn-sm" style="background: var(--danger); color: white;">Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-
-                <!-- Blog Post Card Example 3 -->
-                <div class="card blog-post-card">
-                     <div class="card-image-placeholder">Featured Image (300x200)</div>
-                    <div class="card-content">
-                        <h3 class="card-title">Understanding Our Core Values</h3>
-                        <p class="card-meta">
-                            <span class="post-category">Articles</span> | 
-                            Published: <span class="post-date">2023-08-01</span> | 
-                            Author: <span class="post-author">Guest Writer</span>
-                        </p>
-                        <div class="post-status status-archived">Archived</div>
-                        <p class="card-description">
-                            An in-depth look at the core values that guide the Royal Ambassadors organization and its members...
-                        </p>
-                    </div>
-                    <div class="card-actions">
-                        <a href="#" class="btn btn-secondary btn-view"><span class="icon">&#128065;</span> View</a>
-                        <a href="#" class="btn btn-edit disabled" title="Archived posts cannot be edited"><span class="icon">&#9998;</span> Edit</a>
-                        <a href="#" class="btn btn-delete" title="Delete Post"><span class="icon">&#128465;</span></a>
-                    </div>
-                </div>
-                <!-- Add more blog post cards -->
-            </div>
-
-            <div class="pagination blog-pagination">
-                <button class="btn btn-secondary" disabled>&laquo; Previous</button>
-                <span>Page 1 of 3</span>
-                <button class="btn btn-secondary">Next &raquo;</button>
             </div>
         </main>
     </div>

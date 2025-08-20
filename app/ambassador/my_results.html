@@ -4,83 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Results - Royal Ambassadors</title>
-    <link rel="stylesheet" href="css/my_results.css">
+
+    <!-- Google Fonts & Remix Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Theme & Dashboard CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
 <body>
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <img src="../assets/images/logo.png" alt="RAN Logo" class="sidebar-logo">
-            <h3>Ambassador</h3>
-            <p>Royal Ambassadors NG</p>
-        </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="dashboard.html"><span class="icon">&#128200;</span> Dashboard</a></li>
-                <li><a href="my_exams.html"><span class="icon">&#128221;</span> My Exams</a></li>
-                <li><a href="my_results.html" class="active"><span class="icon">&#128211;</span> My Results</a></li>
-                <li><a href="profile_settings.html"><span class="icon">&#9881;</span> Profile Settings</a></li>
-                <li><a href="../public/blog.html"><span class="icon">&#128226;</span> Blog</a></li>
-                <li><a href="../public/contact.html"><span class="icon">&#128222;</span> Support</a></li>
-                <li><a href="../public/login.html" class="logout-link"><span class="icon">&#128682;</span> Logout</a></li>
-            </ul>
-        </nav>
-        <div class="sidebar-footer">
-            <p>&copy; 2023 RAN Ogun</p>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <header class="header">
-        <button class="sidebar-toggle-button" id="sidebarToggle">&#9776;</button>
-            <div class="header-title">
-                <h1>My Exam Results</h1>
-                <p>View your past exam scores and performance.</p>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">RA</div>
+                <div class="title">Ambassador Portal</div>
             </div>
-            <div class="header-user-info">
-                <img src="../assets/images/director.jpg" alt="User Avatar" class="admin-avatar">
-                <span>Ambassador Name</span>
-            </div>
-        </header>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html"><i class="ri-dashboard-line"></i> Dashboard</a>
+                <a href="my_exams.html"><i class="ri-file-list-3-line"></i> My Exams</a>
+                <a href="my_results.html" class="active"><i class="ri-trophy-line"></i> My Results</a>
+                <a href="profile_settings.html"><i class="ri-user-settings-line"></i> Profile Settings</a>
 
-        <main class="content-area">
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Exam Name</th>
-                            <th>Date Taken</th>
-                            <th>Score</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Stage 1 Advancement Exam</td>
-                            <td>2023-05-10</td>
-                            <td>85%</td>
-                            <td><span class="status status-active">Pass</span></td>
-                            <td><a href="#" class="btn btn-secondary">View Details</a></td>
-                        </tr>
-                        <tr>
-                            <td>Leadership Training Assessment</td>
-                            <td>2022-11-20</td>
-                            <td>65%</td>
-                            <td><span class="status status-active">Pass</span></td>
-                            <td><a href="#" class="btn btn-secondary">View Details</a></td>
-                        </tr>
-                        <tr>
-                            <td>Annual Conference Quiz</td>
-                            <td>2022-06-15</td>
-                            <td>55%</td>
-                            <td><span class="status status-inactive">Fail</span></td>
-                            <td><a href="#" class="btn btn-secondary">View Details</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="nav-title">Resources</div>
+                <a href="../public/gallery.html"><i class="ri-gallery-line"></i> Gallery</a>
+                <a href="../public/blog.html"><i class="ri-article-line"></i> Blog</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="../forms/logout.php"><i class="ri-logout-box-r-line"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="menu-toggle"><i class="ri-menu-2-line"></i></button>
+                    <h1 class="page-title">My Exam Results</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../assets/images/team-1.jpg" alt="User Avatar">
+                        <div class="user-info">
+                            <span class="user-name">Amb. John Doe</span>
+                            <span class="user-role">Envoy</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Wrapper -->
+            <div class="content-wrapper">
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h3>Your Performance History</h3>
+                    </div>
+                    <div class="dash-card-content">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Exam Title</th>
+                                    <th>Date Taken</th>
+                                    <th>Score</th>
+                                    <th>Result</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Old Testament Survey</td>
+                                    <td>2025-07-20</td>
+                                    <td>88%</td>
+                                    <td><span class="status status-approved">Passed</span></td>
+                                    <td><a href="#" class="btn btn-secondary btn-sm">View Details</a></td>
+                                </tr>
+                                <tr>
+                                    <td>The Gospels</td>
+                                    <td>2025-06-15</td>
+                                    <td>92%</td>
+                                    <td><span class="status status-approved">Passed</span></td>
+                                    <td><a href="#" class="btn btn-secondary btn-sm">View Details</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Early Church History</td>
+                                    <td>2025-05-10</td>
+                                    <td>65%</td>
+                                    <td><span class="status status-rejected">Failed</span></td>
+                                    <td><a href="#" class="btn btn-secondary btn-sm">View Details</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
-    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
 </body>
 </html>
