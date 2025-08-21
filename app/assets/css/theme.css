@@ -55,6 +55,16 @@ body{
     gap: 12px;
 }
 
+.logo-container {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 .brand .logo {
     height: 38px;
     width: 38px;
