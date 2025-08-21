@@ -27,7 +27,6 @@ body {
     top: 0;
     left: 0;
     bottom: 0;
-    padding: 24px;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
@@ -35,12 +34,12 @@ body {
 }
 
 .sidebar-header {
+    padding: 24px;
     display: flex;
     align-items: center;
     gap: 12px;
-    padding-bottom: 24px;
-    margin-bottom: 24px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    flex-shrink: 0; /* Prevent header from shrinking */
 }
 
 .sidebar-header .logo {
@@ -64,8 +63,20 @@ body {
 
 .sidebar-nav {
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    overflow-y: auto; /* Make this area scrollable */
+    padding: 24px;
+}
+
+/* Custom Scrollbar Styling */
+.sidebar-nav::-webkit-scrollbar {
+    width: 6px;
+}
+.sidebar-nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+.sidebar-nav::-webkit-scrollbar-thumb {
+    background-color: var(--gold);
+    border-radius: 10px;
 }
 
 .sidebar-nav .nav-title {
