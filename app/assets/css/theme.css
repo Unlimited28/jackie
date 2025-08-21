@@ -318,6 +318,21 @@ body{
     line-height: 1.6;
 }
 
+/* Ad Placeholder */
+.ad-placeholder {
+    padding: 60px 24px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+    margin: 60px auto;
+    max-width: 1200px;
+}
+.ad-placeholder p {
+    color: var(--muted);
+    font-weight: 600;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .hero h1 { font-size: 2.8rem; }
