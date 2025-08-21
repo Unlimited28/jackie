@@ -42,19 +42,7 @@ body {
     flex-shrink: 0; /* Prevent header from shrinking */
 }
 
-.sidebar-header .logo {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, #224a7f, #0e1f43 70%);
-    box-shadow: var(--glow);
-    display: grid;
-    place-items: center;
-    color: var(--gold);
-    font-weight: 800;
-    font-size: 16px;
-    flex-shrink: 0;
-}
+/* Styles for .logo-container and .logo-img are now centralized in theme.css */
 
 .sidebar-header .title {
     font-weight: 700;
