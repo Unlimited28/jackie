@@ -116,6 +116,18 @@
             <form action="../forms/register.php" method="POST">
                 <div class="form-grid">
                     <div class="form-group full-width">
+                        <label for="role">Select Your Role</label>
+                        <select id="role" name="role" class="form-control" required>
+                            <option value="ambassador">Ambassador</option>
+                            <option value="president">Association President</option>
+                            <option value="super_admin">Super Admin</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width" id="passcodeField" style="display: none;">
+                        <label for="passcode">Passcode</label>
+                        <input type="text" id="passcode" name="passcode" class="form-control">
+                    </div>
+                    <div class="form-group full-width">
                         <label for="fullname">Full Name</label>
                         <input type="text" id="fullname" name="fullname" class="form-control" required>
                     </div>
@@ -199,5 +211,6 @@
             </div>
         </div>
     </section>
+    <script src="../assets/js/public.js"></script>
 </body>
 </html>
