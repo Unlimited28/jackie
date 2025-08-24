@@ -10,7 +10,10 @@ require __DIR__ . '/../core/Router.php';
 require __DIR__ . '/../core/Controller.php';
 require __DIR__ . '/../core/View.php';
 require __DIR__ . '/../controllers/PublicController.php';
-require __DIR__ . '/../controllers/DashboardController.php';
+require __DIR__ . '/../controllers/DashboardController.php'; // This one might be redundant now
+require __DIR__ . '/../controllers/AmbassadorController.php';
+require __DIR__ . '/../controllers/PresidentController.php';
+require __DIR__ . '/../controllers/SuperAdminController.php';
 
 use App\Core\Router;
 
