@@ -1,0 +1,163 @@
+<?php
+$this->layout('main', ['title' => 'Blog - Royal Ambassadors']);
+?>
+
+<style>
+    /* This style block should be moved to a dedicated CSS file in a later refactor. */
+    .page-header {
+        padding-top: 120px;
+        padding-bottom: 60px;
+        text-align: center;
+        background: linear-gradient(180deg, rgba(15, 27, 55, 0.5), transparent);
+    }
+    .page-header h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+    }
+    .page-header p {
+        font-size: 1.1rem;
+        color: var(--muted);
+        max-width: 600px;
+        margin: 16px auto 0;
+    }
+    .blog-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 80px 24px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    @media (min-width: 992px) {
+        .blog-layout {
+            grid-template-columns: 2.5fr 1fr;
+        }
+    }
+    .blog-post-card {
+        background: var(--panel);
+        border: 1px solid rgba(255,255,255,.07);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        margin-bottom: 32px;
+    }
+    .blog-post-card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+    }
+    .blog-post-content {
+        padding: 24px;
+    }
+    .blog-post-content h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+    .blog-post-content h3 a {
+        color: var(--text);
+        text-decoration: none;
+        transition: var(--transition);
+    }
+    .blog-post-content h3 a:hover {
+        color: var(--accent-2);
+    }
+    .post-meta {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-bottom: 16px;
+    }
+    .post-meta span {
+        margin-right: 16px;
+    }
+    .post-excerpt {
+        color: var(--muted);
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+    .sidebar-widget {
+        background: var(--panel);
+        border: 1px solid rgba(255,255,255,.07);
+        border-radius: var(--radius);
+        padding: 24px;
+        margin-bottom: 32px;
+    }
+    .sidebar-widget h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .sidebar-widget ul {
+        list-style: none;
+    }
+    .sidebar-widget ul li a {
+        color: var(--muted);
+        text-decoration: none;
+        transition: var(--transition);
+        display: block;
+        padding: 8px 0;
+    }
+    .sidebar-widget ul li a:hover {
+        color: var(--accent-2);
+    }
+</style>
+
+<!-- Page Header -->
+<header class="page-header">
+    <h1>Our Blog</h1>
+    <p>News, articles, and stories from the Royal Ambassadors community.</p>
+</header>
+
+<!-- Blog Layout -->
+<div class="blog-layout">
+    <!-- Main Content -->
+    <main class="blog-posts">
+        <article class="blog-post-card">
+            <img src="<?= asset('assets/images/blog/blog-1.jpg') ?>" alt="Blog Post Image">
+            <div class="blog-post-content">
+                <h3><a href="/blog/post">The Importance of Youth Leadership in the Church</a></h3>
+                <div class="post-meta">
+                    <span><i class="ri-user-line"></i> Super Admin</span>
+                    <span><i class="ri-calendar-line"></i> Aug 15, 2025</span>
+                </div>
+                <p class="post-excerpt">Discover why empowering young leaders is crucial for the future of the church and how the Royal Ambassadors program is making a difference...</p>
+                <a href="/blog/post" class="btn btn-secondary">Read More</a>
+            </div>
+        </article>
+        <article class="blog-post-card">
+            <img src="<?= asset('assets/images/blog/blog-2.jpg') ?>" alt="Blog Post Image">
+            <div class="blog-post-content">
+                <h3><a href="/blog/post">Recap: Annual State Camp 2025</a></h3>
+                <div class="post-meta">
+                    <span><i class="ri-user-line"></i> Admin</span>
+                    <span><i class="ri-calendar-line"></i> Aug 1, 2025</span>
+                </div>
+                <p class="post-excerpt">A look back at the highlights from our biggest event of the year, filled with spiritual growth, learning, and fellowship...</p>
+                <a href="/blog/post" class="btn btn-secondary">Read More</a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-widget">
+            <h4>Categories</h4>
+            <ul>
+                <li><a href="#">Leadership</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Faith</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-widget">
+            <h4>Recent Posts</h4>
+            <ul>
+                <li><a href="#">The Importance of Youth Leadership</a></li>
+                <li><a href="#">Recap: Annual State Camp 2025</a></li>
+                <li><a href="#">Serving the Community: Our Latest Outreach</a></li>
+            </ul>
+        </div>
+    </aside>
+</div>
